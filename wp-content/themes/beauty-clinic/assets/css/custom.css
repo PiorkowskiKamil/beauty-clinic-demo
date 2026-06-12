@@ -13,17 +13,19 @@
 	font-weight: 700;
 	letter-spacing: 0.16em;
 	text-transform: uppercase;
-	color: var(--wp--preset--color--primary-dark);
+	/* odcień ciemniejszy od primary-dark: na kremie primary-dark daje
+	   4.41:1 — włos poniżej AA dla małego tekstu */
+	color: #7d6342;
 }
 
-/* Złota linia ozdobna pod nagłówkiem sekcji — dobita do lewej,
-   jak nagłówki, pod którymi występuje */
+/* Linia pod nagłówkiem sekcji: hairline przez całą szerokość,
+   ten sam język co nagłówki kategorii cennika */
 .bc-gold-rule {
-	width: 64px !important;
-	height: 2px;
-	background-color: var(--wp--preset--color--primary);
+	width: 100% !important;
+	height: 1px;
+	background-color: var(--wp--preset--color--sand);
 	border: none;
-	margin-top: 0.25rem;
+	margin-top: 0.85rem;
 	margin-left: 0;
 	margin-right: auto;
 }
@@ -74,11 +76,12 @@
 	box-shadow: 0 12px 32px rgba(34, 31, 26, 0.08);
 }
 
-/* Numer / ikona na karcie */
+/* Numer / cena / statystyka na karcie — ciemne złoto: jasne (#c5a572)
+   daje 2.3:1 na bieli, za mało nawet dla dużego tekstu (AA: 3:1) */
 .bc-card-icon {
 	font-family: var(--wp--preset--font-family--heading);
 	font-size: 1.75rem;
-	color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--primary-dark);
 	line-height: 1;
 }
 
@@ -757,38 +760,7 @@ body.home .bc-site-header.bc-header-solid {
 	pointer-events: none;
 }
 
-/* ---------- Eyebrow ze złotą kreską ---------- */
-
-/* Wyrównane do lewej: kreska przed tekstem */
-.bc-eyebrow:not(.has-text-align-center)::before {
-	content: "";
-	display: inline-block;
-	width: 2rem;
-	height: 1px;
-	background: var(--wp--preset--color--primary);
-	vertical-align: middle;
-	margin-right: 0.75rem;
-}
-
-/* Wyśrodkowane: kreski po obu stronach */
-.bc-eyebrow.has-text-align-center::before,
-.bc-eyebrow.has-text-align-center::after {
-	content: "";
-	display: inline-block;
-	width: 2rem;
-	height: 1px;
-	background: var(--wp--preset--color--primary);
-	vertical-align: middle;
-}
-
-.bc-eyebrow.has-text-align-center::before { margin-right: 0.75rem; }
-.bc-eyebrow.has-text-align-center::after { margin-left: 0.75rem; }
-
-/* W stopce kreski zabierają miejsce w wąskich kolumnach — bez nich */
-.bc-site-footer .bc-eyebrow::before,
-.bc-site-footer .bc-eyebrow::after {
-	content: none;
-}
+/* ---------- Eyebrow: czysty tekst, bez ozdobnych kresek ---------- */
 
 /* ---------- Stopniowane wejście kart wewnątrz sekcji ---------- */
 
@@ -876,14 +848,11 @@ body.home .bc-site-header.bc-header-solid {
 	pointer-events: none;
 }
 
-/* ---------- Opinie: cytat w serifie ---------- */
-
-/* Treść opinii kursywą w serifie — cieplejszy, osobisty ton */
+/* ---------- Opinie: treść w foncie tekstowym (italik serif odrzucony
+   przez właściciela projektu) ---------- */
 .bc-stars + p {
-	font-family: var(--wp--preset--font-family--heading);
-	font-style: italic;
-	font-size: 1.05rem;
-	line-height: 1.6;
+	font-size: 1rem;
+	line-height: 1.65;
 }
 
 /* ---------- Wyróżniki: złote ikony w okręgach (zamiast numerów) ---------- */
@@ -1027,19 +996,10 @@ body.home .bc-site-header.bc-header-solid {
 	color: var(--wp--preset--color--base);
 }
 
-/* ---------- Tytuły podstron: krótka złota linia pod nagłówkiem ---------- */
+/* ---------- Tytuły podstron: czysty serif, bez ozdobnej kreski ---------- */
 
 .wp-block-post-title.has-text-align-center {
 	letter-spacing: 0.01em;
-}
-
-.wp-block-post-title.has-text-align-center::after {
-	content: "";
-	display: block;
-	width: 3.5rem;
-	height: 2px;
-	background: var(--wp--preset--color--primary);
-	margin: 1.1rem auto 0;
 }
 
 /* ---------- Cennik: minimalistyczna lista editorial ---------- */
@@ -1464,6 +1424,30 @@ body.bc-cb-lock {
 	padding: 0.9rem 1.25rem;
 	margin: 1.25rem 0 0;
 	font-size: var(--wp--preset--font-size--small);
+}
+
+/* Komunikat z treścią nigdy nie może zostać ukryty przez stany CF7 */
+.wpcf7 form .wpcf7-response-output:not(:empty) {
+	display: block;
+}
+
+/* Wąskie ekrany: zanikająca prawa krawędź sygnalizuje, że tabelę
+   pakietów można przewinąć poziomo */
+@media (max-width: 600px) {
+	figure.bc-price-table {
+		position: relative;
+	}
+
+	figure.bc-price-table::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 2.5rem;
+		background: linear-gradient(90deg, transparent, var(--wp--preset--color--base));
+		pointer-events: none;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {

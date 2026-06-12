@@ -386,9 +386,28 @@
 			output.setAttribute( 'aria-hidden', 'false' );
 			output.setAttribute( 'role', 'status' );
 
+			// CSS CF7 pokazuje komunikat tylko w stanach sent/invalid —
+			// bez podmiany klasy "init" tekst zostaje na display:none.
+			form.classList.remove( 'init', 'sent', 'invalid', 'failed' );
+			form.classList.add( allFilled ? 'sent' : 'invalid' );
+			form.setAttribute( 'data-status', allFilled ? 'sent' : 'invalid' );
+
 			if ( allFilled ) {
 				output.textContent = 'Dziękujemy za wiadomość! Odpowiemy najpóźniej następnego dnia roboczego.';
-				form.reset();
+
+				// Nie form.reset(): event "reset" przejmuje skrypt CF7,
+				// który czyści komunikat i zawiesza formularz na fetchu
+				// do nieistniejącego REST API. Pola czyścimy ręcznie.
+				form
+					.querySelectorAll( 'input[type="text"], input[type="email"], input[type="tel"], textarea' )
+					.forEach( function ( field ) {
+						field.value = '';
+					} );
+				form
+					.querySelectorAll( 'input[type="checkbox"]' )
+					.forEach( function ( field ) {
+						field.checked = false;
+					} );
 			} else {
 				output.textContent = 'Uzupełnij wymagane pola formularza.';
 			}
