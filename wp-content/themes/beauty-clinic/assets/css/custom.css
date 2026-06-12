@@ -16,13 +16,16 @@
 	color: var(--wp--preset--color--primary-dark);
 }
 
-/* Złota linia ozdobna pod nagłówkiem sekcji */
+/* Złota linia ozdobna pod nagłówkiem sekcji — dobita do lewej,
+   jak nagłówki, pod którymi występuje */
 .bc-gold-rule {
 	width: 64px !important;
 	height: 2px;
 	background-color: var(--wp--preset--color--primary);
 	border: none;
 	margin-top: 0.25rem;
+	margin-left: 0;
+	margin-right: auto;
 }
 
 /* ---------- Nagłówek strony (sticky) ---------- */
@@ -246,7 +249,7 @@
 	background: var(--wp--preset--color--primary);
 	color: var(--wp--preset--color--contrast);
 	border: none;
-	border-radius: 999px;
+	border-radius: 10px;
 	padding: 0.85rem 2.5rem;
 	font-family: var(--wp--preset--font-family--body);
 	font-size: var(--wp--preset--font-size--small);
@@ -258,7 +261,7 @@
 
 .wpcf7 input[type="submit"]:hover,
 .wpcf7 input[type="submit"]:focus {
-	background: var(--wp--preset--color--contrast);
+	background: var(--wp--preset--color--primary-dark);
 	color: var(--wp--preset--color--base);
 }
 
@@ -298,15 +301,15 @@ html {
 	border-top: 1px solid rgba(197, 165, 114, 0.4);
 }
 
-/* Stopka: stonowane linki */
+/* Stopka: stonowane linki — bez podkreślenia, podświetlenie przez fade */
 .bc-site-footer a {
 	color: var(--wp--preset--color--base);
 	text-decoration: none;
+	transition: color 0.25s ease;
 }
 
 .bc-site-footer a:hover {
 	color: var(--wp--preset--color--primary);
-	text-decoration: underline;
 }
 
 /* Lista w stopce bez punktorów */
@@ -921,9 +924,11 @@ body.home .bc-site-header.bc-header-solid {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E");
 }
 
-/* Karty wyróżników: kremowe tło wyróżnia je na białej sekcji */
+/* Karty wyróżników: kremowe tło wyróżnia je na białej sekcji;
+   treść wycentrowana (ikona, tytuł i opis w jednej osi) */
 .bc-card--soft {
 	background: var(--wp--preset--color--cream);
+	text-align: center;
 }
 
 /* ---------- Cennik: kategorie w kremowych kartach ---------- */
@@ -933,34 +938,11 @@ body.home .bc-site-header.bc-header-solid {
 	border-radius: 8px;
 }
 
-/* ---------- Nawigacja: animowane złote podkreślenie ---------- */
+/* ---------- Nawigacja: podświetlenie czystym przejściem koloru ---------- */
 
-.bc-site-header .wp-block-navigation a {
-	position: relative;
-}
-
-.bc-site-header .wp-block-navigation a::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: -4px;
-	width: 100%;
-	height: 1px;
-	background: var(--wp--preset--color--primary);
-	transform: scaleX(0);
-	transform-origin: left;
-	transition: transform 0.25s ease;
-}
-
-.bc-site-header .wp-block-navigation a:hover::after,
-.bc-site-header .wp-block-navigation a:focus::after,
-.bc-site-header .wp-block-navigation a[aria-current="page"]::after {
-	transform: scaleX(1);
-}
-
-/* W otwartym menu mobilnym podkreślenie wygląda obco — bez niego */
-.bc-site-header .wp-block-navigation__responsive-container.is-menu-open a::after {
-	content: none;
+/* Aktywna strona oznaczona kolorem, bez podkreślenia */
+.bc-site-header .wp-block-navigation a[aria-current="page"] {
+	color: var(--wp--preset--color--primary-dark);
 }
 
 /* ---------- Mapa dojazdu (Kontakt) ---------- */
@@ -1013,5 +995,469 @@ body.home .bc-site-header.bc-header-solid {
 
 	.bc-card:hover .wp-block-image img {
 		transform: none;
+	}
+}
+
+/* ==========================================================================
+   Szlif: eleganckie linki, tytuły podstron, cennik, akordeony, widget
+   "Oddzwonimy do Ciebie" (FAB + modal)
+   ========================================================================== */
+
+/* ---------- Linki w treści: bez podkreślenia, podświetlenie przez fade ---------- */
+
+.entry-content a:where(:not(.wp-element-button)) {
+	text-decoration: none;
+	font-weight: 700;
+	transition: color 0.25s ease;
+}
+
+.entry-content a:where(:not(.wp-element-button)):hover {
+	color: var(--wp--preset--color--primary);
+}
+
+/* ---------- Przyciski: miękki prostokąt zamiast pigułki, cieplejszy hover ---------- */
+
+:root .wp-element-button,
+:root .wp-block-button__link {
+	border-radius: 10px;
+}
+
+:root :where(.wp-element-button:hover, .wp-block-button__link:hover) {
+	background-color: var(--wp--preset--color--primary-dark);
+	color: var(--wp--preset--color--base);
+}
+
+/* ---------- Tytuły podstron: krótka złota linia pod nagłówkiem ---------- */
+
+.wp-block-post-title.has-text-align-center {
+	letter-spacing: 0.01em;
+}
+
+.wp-block-post-title.has-text-align-center::after {
+	content: "";
+	display: block;
+	width: 3.5rem;
+	height: 2px;
+	background: var(--wp--preset--color--primary);
+	margin: 1.1rem auto 0;
+}
+
+/* ---------- Cennik: minimalistyczna lista editorial ---------- */
+
+/* Nagłówek kategorii: serif + cienka linia na całą szerokość */
+.bc-pricelist h2 {
+	font-size: 1.7rem;
+	font-weight: 600;
+	padding-bottom: 0.85rem;
+	border-bottom: 1px solid var(--wp--preset--color--sand);
+	margin: 3.25rem 0 0.9rem;
+}
+
+.bc-pricelist > h2:first-child {
+	margin-top: 0;
+}
+
+.bc-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* Wiersz: nazwa po lewej, cena po prawej, dużo światła */
+.bc-menu-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 2.5rem;
+	padding: 0.8rem 0;
+	margin: 0;
+}
+
+.bc-menu-time {
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--x-small);
+	margin-left: 0.5rem;
+	white-space: nowrap;
+}
+
+.bc-menu-time::before {
+	content: "·";
+	margin-right: 0.35rem;
+}
+
+/* Tabela pakietów wewnątrz listy: odstęp jak wiersze menu */
+.bc-pricelist figure.bc-price-table {
+	margin: 0.75rem 0 0;
+}
+
+.bc-menu-price {
+	white-space: nowrap;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Notka pod listą (np. zalecana seria zabiegów) */
+.bc-pricelist-note {
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--small);
+	font-style: italic;
+	margin: 0.5rem 0 0;
+}
+
+/* Pakiety: minimalna tabela w tym samym duchu co lista.
+   Reset ramek bloku tabeli WP (pełne obramowanie komórek psuje lekki układ) */
+.bc-price-table table,
+.bc-price-table thead,
+.bc-price-table th,
+.bc-price-table td {
+	border: none;
+}
+
+.bc-price-table th:not(:first-child),
+.bc-price-table td:not(:first-child) {
+	text-align: right;
+}
+
+.bc-price-table th {
+	border-bottom: 1px solid var(--wp--preset--color--sand);
+	color: var(--wp--preset--color--muted);
+	padding: 0.85rem 0.5rem;
+}
+
+.bc-price-table td {
+	padding: 0.85rem 0.5rem;
+	border-bottom: 1px solid rgba(232, 228, 220, 0.6);
+}
+
+.bc-price-table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.bc-price-table td:first-child {
+	padding-left: 0;
+}
+
+.bc-price-table th:first-child {
+	padding-left: 0;
+}
+
+/* Wąskie ekrany: tabela przewija się poziomo zamiast miażdżyć kolumny */
+figure.bc-price-table {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.bc-price-table table {
+	min-width: 30rem;
+}
+
+/* ---------- Akordeony: płynne pojawianie się treści po rozwinięciu ---------- */
+
+@keyframes bc-acc-fade {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+}
+
+.bc-zasada[open] > :not(summary),
+.bc-offer-details[open] > :not(summary) {
+	animation: bc-acc-fade 0.35s ease 0.08s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.bc-zasada[open] > :not(summary),
+	.bc-offer-details[open] > :not(summary) {
+		animation: none;
+	}
+}
+
+/* ---------- Widget "Oddzwonimy do Ciebie": pływający przycisk ---------- */
+
+.bc-cb-fab {
+	position: fixed;
+	right: 1.5rem;
+	bottom: 1.5rem;
+	z-index: 9990;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	background: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--contrast);
+	border: none;
+	border-radius: 999px;
+	padding: 0.9rem 1.6rem;
+	font-family: var(--wp--preset--font-family--body);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	cursor: pointer;
+	box-shadow: 0 10px 30px rgba(34, 31, 26, 0.22);
+	transition: transform 0.25s ease, box-shadow 0.25s ease,
+		background-color 0.25s ease, color 0.25s ease;
+	animation: bc-fab-in 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.8s both;
+}
+
+@keyframes bc-fab-in {
+	from {
+		opacity: 0;
+		transform: translateY(14px);
+	}
+}
+
+.bc-cb-fab:hover,
+.bc-cb-fab:focus-visible {
+	background: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+	transform: translateY(-2px);
+	box-shadow: 0 14px 36px rgba(34, 31, 26, 0.3);
+}
+
+.bc-cb-fab svg {
+	width: 1.15em;
+	height: 1.15em;
+	flex: none;
+}
+
+@media (max-width: 600px) {
+	.bc-cb-fab {
+		right: 1rem;
+		bottom: 1rem;
+		padding: 0.75rem 1.25rem;
+		font-size: var(--wp--preset--font-size--x-small);
+	}
+}
+
+@media print {
+	.bc-cb-fab {
+		display: none;
+	}
+}
+
+/* ---------- Widget "Oddzwonimy do Ciebie": modal ---------- */
+
+.bc-cb-modal {
+	border: none;
+	border-radius: 14px;
+	padding: 0;
+	width: min(92vw, 30rem);
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	box-shadow: 0 30px 80px rgba(15, 13, 10, 0.35);
+}
+
+.bc-cb-modal::backdrop {
+	background: rgba(15, 13, 10, 0.55);
+}
+
+/* Animowane otwarcie (przeglądarki bez @starting-style pokazują modal od razu) */
+.bc-cb-modal[open] {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+	transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@starting-style {
+	.bc-cb-modal[open] {
+		opacity: 0;
+		transform: translateY(18px) scale(0.97);
+	}
+}
+
+.bc-cb-modal[open]::backdrop {
+	opacity: 1;
+	transition: opacity 0.3s ease;
+}
+
+@starting-style {
+	.bc-cb-modal[open]::backdrop {
+		opacity: 0;
+	}
+}
+
+/* Zamykanie sterowane klasą z JS — po przejściu modal znika */
+.bc-cb-modal.bc-cb-closing {
+	opacity: 0;
+	transform: translateY(12px) scale(0.98);
+}
+
+.bc-cb-modal.bc-cb-closing::backdrop {
+	opacity: 0;
+}
+
+body.bc-cb-lock {
+	overflow: hidden;
+}
+
+.bc-cb-inner {
+	position: relative;
+	padding: 2.25rem 2.25rem 1.75rem;
+}
+
+.bc-cb-close {
+	position: absolute;
+	top: 0.9rem;
+	right: 0.9rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	display: grid;
+	place-items: center;
+	background: none;
+	border: none;
+	border-radius: 50%;
+	color: var(--wp--preset--color--muted);
+	cursor: pointer;
+	transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.bc-cb-close:hover {
+	color: var(--wp--preset--color--contrast);
+	background: var(--wp--preset--color--cream);
+}
+
+.bc-cb-close svg {
+	width: 1.1rem;
+	height: 1.1rem;
+}
+
+.bc-cb-modal h2 {
+	font-size: 1.6rem;
+	margin: 0 0 0.5rem;
+	padding-right: 2rem;
+}
+
+.bc-cb-sub {
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--small);
+	margin: 0 0 1.5rem;
+}
+
+.bc-cb-form label {
+	display: block;
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	margin-bottom: 1.1rem;
+}
+
+.bc-cb-form input,
+.bc-cb-form textarea {
+	display: block;
+	width: 100%;
+	margin-top: 0.4rem;
+	border: 1px solid var(--wp--preset--color--sand);
+	border-radius: 8px;
+	padding: 0.8rem 1rem;
+	font-family: var(--wp--preset--font-family--body);
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: 400;
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bc-cb-form input:focus,
+.bc-cb-form textarea:focus {
+	outline: none;
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 0 0 3px rgba(197, 165, 114, 0.25);
+}
+
+.bc-cb-form input.bc-invalid,
+.bc-cb-form textarea.bc-invalid {
+	border-color: #b3543f;
+}
+
+.bc-cb-error {
+	color: #a04832;
+	font-size: var(--wp--preset--font-size--x-small);
+	margin: -0.4rem 0 0.9rem;
+}
+
+.bc-cb-submit {
+	width: 100%;
+	border: none;
+	cursor: pointer;
+}
+
+/* Sukces po wysłaniu */
+.bc-cb-success {
+	text-align: center;
+	padding: 1.5rem 0 1rem;
+}
+
+.bc-cb-success-ico {
+	width: 3.5rem;
+	height: 3.5rem;
+	margin: 0 auto 1rem;
+	border: 1px solid var(--wp--preset--color--primary);
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	color: var(--wp--preset--color--primary-dark);
+}
+
+.bc-cb-success-ico svg {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.bc-cb-success h3 {
+	margin: 0 0 0.5rem;
+}
+
+.bc-cb-success p {
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--small);
+	margin: 0;
+}
+
+/* "Lub zadzwoń od razu" + nota prywatności */
+.bc-cb-alt {
+	text-align: center;
+	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--muted);
+	margin: 1.25rem 0 0;
+}
+
+.bc-cb-alt a {
+	color: var(--wp--preset--color--primary-dark);
+	font-weight: 700;
+	text-decoration: none;
+	transition: color 0.25s ease;
+}
+
+.bc-cb-alt a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+.bc-cb-note {
+	text-align: center;
+	font-size: var(--wp--preset--font-size--x-small);
+	color: var(--wp--preset--color--muted);
+	margin: 0.75rem 0 0;
+}
+
+/* Formularz Kontakt: pole z brakiem + komunikat sukcesu w palecie marki */
+.wpcf7 input.bc-invalid,
+.wpcf7 textarea.bc-invalid {
+	border-color: #b3543f;
+}
+
+.wpcf7 .wpcf7-response-output {
+	border: 1px solid var(--wp--preset--color--primary);
+	border-radius: 8px;
+	background: var(--wp--preset--color--cream);
+	padding: 0.9rem 1.25rem;
+	margin: 1.25rem 0 0;
+	font-size: var(--wp--preset--font-size--small);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.bc-cb-fab {
+		animation: none;
+	}
+
+	.bc-cb-modal[open],
+	.bc-cb-modal[open]::backdrop {
+		transition: none;
 	}
 }
