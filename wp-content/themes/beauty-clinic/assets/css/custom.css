@@ -883,6 +883,108 @@ body.home .bc-site-header.bc-header-solid {
 	line-height: 1.6;
 }
 
+/* ---------- Wyróżniki: złote ikony w okręgach (zamiast numerów) ---------- */
+
+.bc-card-ico {
+	width: 3.25rem;
+	height: 3.25rem;
+	border: 1px solid var(--wp--preset--color--primary);
+	border-radius: 50%;
+	position: relative;
+}
+
+.bc-card-ico::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.bc-card-ico--zespol::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E");
+}
+
+.bc-card-ico--serce::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E");
+}
+
+.bc-card-ico--kropla::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z'/%3E%3C/svg%3E");
+}
+
+.bc-card-ico--tarcza::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E");
+}
+
+/* Karty wyróżników: kremowe tło wyróżnia je na białej sekcji */
+.bc-card--soft {
+	background: var(--wp--preset--color--cream);
+}
+
+/* ---------- Cennik: kategorie w kremowych kartach ---------- */
+
+.bc-price-card {
+	border: 1px solid var(--wp--preset--color--sand);
+	border-radius: 8px;
+}
+
+/* ---------- Nawigacja: animowane złote podkreślenie ---------- */
+
+.bc-site-header .wp-block-navigation a {
+	position: relative;
+}
+
+.bc-site-header .wp-block-navigation a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -4px;
+	width: 100%;
+	height: 1px;
+	background: var(--wp--preset--color--primary);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.25s ease;
+}
+
+.bc-site-header .wp-block-navigation a:hover::after,
+.bc-site-header .wp-block-navigation a:focus::after,
+.bc-site-header .wp-block-navigation a[aria-current="page"]::after {
+	transform: scaleX(1);
+}
+
+/* W otwartym menu mobilnym podkreślenie wygląda obco — bez niego */
+.bc-site-header .wp-block-navigation__responsive-container.is-menu-open a::after {
+	content: none;
+}
+
+/* ---------- Mapa dojazdu (Kontakt) ---------- */
+
+/* Skala szarości dopasowuje mapę do palety; kolor wraca po najechaniu */
+.bc-map {
+	border-radius: 8px;
+	overflow: hidden;
+	border: 1px solid var(--wp--preset--color--sand);
+	line-height: 0;
+}
+
+.bc-map iframe {
+	width: 100%;
+	height: 420px;
+	border: 0;
+	filter: grayscale(100%);
+	transition: filter 0.4s ease;
+}
+
+.bc-map:hover iframe {
+	filter: grayscale(0);
+}
+
 /* ---------- Drobiazgi ---------- */
 
 /* Zaznaczanie tekstu w kolorze marki */
