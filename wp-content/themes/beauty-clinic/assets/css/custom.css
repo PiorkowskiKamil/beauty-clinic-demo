@@ -140,11 +140,11 @@
 
 /* ---------- Opinie klientek ---------- */
 
-/* Kremowe tło ze złotą linią u góry odróżnia opinie od kart wyróżników */
+/* Kremowe tło i ozdobny cudzysłów odróżniają opinie od kart wyróżników
+   (bez kolorowego paska na krawędzi — anty-wzorzec border-accent) */
 .bc-testimonial {
 	background: var(--wp--preset--color--cream);
 	border: 1px solid var(--wp--preset--color--sand);
-	border-top: 3px solid var(--wp--preset--color--primary);
 	border-radius: 6px;
 	position: relative;
 }
@@ -1295,10 +1295,10 @@ body.bc-cb-lock {
 
 .bc-cb-close {
 	position: absolute;
-	top: 0.9rem;
-	right: 0.9rem;
-	width: 2.5rem;
-	height: 2.5rem;
+	top: 0.75rem;
+	right: 0.75rem;
+	width: 2.75rem;
+	height: 2.75rem;
 	display: grid;
 	place-items: center;
 	background: none;
@@ -1434,6 +1434,21 @@ body.bc-cb-lock {
 	font-size: var(--wp--preset--font-size--x-small);
 	color: var(--wp--preset--color--muted);
 	margin: 0.75rem 0 0;
+}
+
+/* Placeholdery z kontrastem AA zamiast domyślnej szarości przeglądarki */
+.bc-cb-form input::placeholder,
+.bc-cb-form textarea::placeholder,
+.wpcf7 input::placeholder,
+.wpcf7 textarea::placeholder {
+	color: var(--wp--preset--color--muted);
+	opacity: 1;
+}
+
+/* Ikony społecznościowe w stopce: obszar dotyku ≥44px bez zmiany układu */
+.bc-site-footer .wp-block-social-link-anchor {
+	padding: 0.625rem;
+	margin: -0.625rem;
 }
 
 /* Formularz Kontakt: pole z brakiem + komunikat sukcesu w palecie marki */
