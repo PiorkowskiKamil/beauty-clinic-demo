@@ -1567,17 +1567,20 @@ body.bc-cb-lock {
 		order: -1;
 	}
 
-	/* #7/#8/#9 Oferta: wiersz ceny przestaje być flex-rzędem (powodował
-	   poziomą przewijankę na wąskim) — nazwa+opis płyną tekstem,
-	   cena dobita na własnej linii po prawej */
+	/* #7/#8/#9 Oferta: na wąskim flex-rząd powodował poziomą przewijankę.
+	   Cena (ostatni <strong>) PŁYWA w prawo — siedzi w JEDNEJ linii z opisem
+	   (górny-prawy róg), a opis zawija się obok/poniżej. flow-root domyka float,
+	   żeby nie wchodził na następny wiersz. (padding-left/nowrap z reguły bazowej.) */
 	.bc-price-row {
-		display: block;
+		display: flow-root;
 	}
 	.bc-price-row strong:last-child {
-		display: block;
-		margin-left: 0;
-		padding-left: 0;
-		margin-top: 0.35rem;
-		text-align: right;
+		float: right;
+	}
+
+	/* Odstęp między sekcjami oferty na mobile za duży (4rem ≈ 64px) — zmniejszamy
+	   do 2rem. Tylko Oferta (page-id-7); na desktopie zostaje 4rem. */
+	body.page-id-7 .wp-block-spacer[style*="height:4rem"] {
+		height: 2rem !important;
 	}
 }
