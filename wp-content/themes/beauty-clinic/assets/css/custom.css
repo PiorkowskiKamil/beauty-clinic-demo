@@ -40,6 +40,29 @@
 	border-bottom: 1px solid var(--wp--preset--color--sand);
 }
 
+/* .bc-site-header jest opakowany w <header class="wp-block-template-part">, który
+   ma wysokość SAMEGO nagłówka — przez to sticky na .bc-site-header nie miał się
+   gdzie przykleić (rodzic znika po ~78px scrolla i nagłówek odjeżdża). Sticky
+   musi siedzieć na opakowaniu, które jest dzieckiem wysokiego .wp-site-blocks.
+   Strona główna używa fixed (kinowy overlay na hero), więc ją pomijamy. */
+body:not(.home) header.wp-block-template-part {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+/* Zdjęcia sekcji na stronie Oferta (zigzag 2-kol, lazy-load) nie miały rezerwacji
+   wysokości — figura zwijała się do ~29px zanim lazy-load wczytał obraz, więc
+   zdjęcie wyglądało na brakujące. Rezerwujemy proporcje 3:2 (pliki 900×600), by
+   miejsce było trzymane i obraz wczytał się płynnie. Selektor celuje wyłącznie w
+   zdjęcia sekcji oferty: home „O nas" ma .bc-fill-img, zdjęcia zespołu .bc-portrait. */
+figure.wp-block-image.bc-rounded:not(.bc-fill-img):not(.bc-portrait) img {
+	aspect-ratio: 3 / 2;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
 /* Nazwa salonu w nagłówku — serif, bez podkreślenia */
 .bc-site-brand a {
 	font-family: var(--wp--preset--font-family--heading);
@@ -83,6 +106,13 @@
 	font-size: 1.75rem;
 	color: var(--wp--preset--color--primary-dark);
 	line-height: 1;
+}
+
+/* Statystyki w sekcji „O nas" wyśrodkowane — spójnie z wyśrodkowanymi
+   nagłówkami sekcji w całym serwisie (każda liczba nad swoją etykietą).
+   :has celuje wyłącznie w wiersz statystyk (bezpośrednie dziecko .bc-stat). */
+.wp-block-columns:has(> .wp-block-column > .bc-card-icon.bc-stat) {
+	text-align: center;
 }
 
 /* ---------- Karty oferty (siatka 2×2 na kremowym tle) ---------- */
@@ -678,6 +708,17 @@ body.home .bc-site-header.bc-header-solid {
 	backdrop-filter: blur(10px);
 	border-bottom-color: var(--wp--preset--color--sand);
 	box-shadow: 0 10px 30px rgba(34, 31, 26, 0.07);
+}
+
+/* Otwarte menu mobilne to position:fixed; inset:0. Niezerowy backdrop-filter
+   na nagłówku czyni go blokiem zawierającym dla potomków fixed → overlay
+   wypełnia pasek nagłówka (~471×45) zamiast ekranu, a pozycje menu spływają
+   na ciemne hero ciemnym tekstem (niewidoczne — widać tylko „O nas"). Gdy
+   menu jest otwarte, zdejmujemy filtr (i tak zasłonięty pełnoekranowym białym
+   menu) — overlay wraca do pełnego viewportu i wszystkie pozycje są widoczne. */
+body.home .bc-site-header.bc-header-solid:has(.wp-block-navigation__responsive-container.is-menu-open) {
+	-webkit-backdrop-filter: none;
+	backdrop-filter: none;
 }
 
 /* ---------- Hero: pełny ekran, winieta, powolny zoom ---------- */
@@ -1302,6 +1343,9 @@ body.bc-cb-lock {
 .bc-cb-form textarea {
 	display: block;
 	width: 100%;
+	/* width:100% liczone z paddingiem+obramowaniem — bez tego pola wychodziły
+	   ~34px poza prawy padding modala i nie były wyrównane z przyciskiem/etykietami */
+	box-sizing: border-box;
 	margin-top: 0.4rem;
 	border: 1px solid var(--wp--preset--color--sand);
 	border-radius: 8px;
@@ -1411,6 +1455,14 @@ body.bc-cb-lock {
 	margin: -0.625rem;
 }
 
+/* Pola CF7 mają width:100% bez border-box → padding+obramowanie wypychały je
+   ~14px poza viewport (pozioma przewijanka na telefonie na stronie Kontakt).
+   border-box mieści je w kolumnie formularza na każdej szerokości. */
+.wpcf7 input.wpcf7-form-control,
+.wpcf7 textarea.wpcf7-form-control {
+	box-sizing: border-box;
+}
+
 /* Formularz Kontakt: pole z brakiem + komunikat sukcesu w palecie marki */
 .wpcf7 input.bc-invalid,
 .wpcf7 textarea.bc-invalid {
@@ -1458,5 +1510,74 @@ body.bc-cb-lock {
 	.bc-cb-modal[open],
 	.bc-cb-modal[open]::backdrop {
 		transition: none;
+	}
+}
+
+/* ==========================================================================
+   Poprawki mobilne wg feedbacku z telefonu (2026-06).
+   Sekcja na końcu pliku — nadpisuje wcześniejsze reguły kolejnością źródła.
+   ========================================================================== */
+@media (max-width: 781px) {
+	/* #1 Hero: wyśrodkowane przyciski CTA (na desktopie zostają do lewej) */
+	.bc-hero .wp-block-buttons {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	/* #2 Statystyki (12+/5000+/100%): zostają w JEDNEJ linii (3 obok siebie).
+	   :has z bezpośrednim dzieckiem celuje TYLKO w wiersz statystyk, nie w
+	   nadrzędne kolumny zdjęcie|tekst (te mają się dalej stackować). */
+	.wp-block-columns:has(> .wp-block-column > .bc-card-icon.bc-stat) {
+		flex-wrap: nowrap !important;
+		gap: 0.75rem;
+	}
+	.wp-block-columns:has(> .wp-block-column > .bc-card-icon.bc-stat) > .wp-block-column {
+		flex: 1 1 0 !important;
+		flex-basis: 0 !important;
+		min-width: 0;
+	}
+	.bc-stat {
+		font-size: 1.4rem;
+	}
+
+	/* #3 Stopka: zwarta siatka 2-kolumnowa zamiast rozstrzelonej pionowej
+	   listy z dużą ilością pustej przestrzeni; marka na całą szerokość u góry */
+	.bc-site-footer .wp-block-columns {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem 1.5rem;
+	}
+	.bc-site-footer .wp-block-columns > .wp-block-column {
+		flex-basis: auto !important;
+	}
+	.bc-site-footer .wp-block-columns > .wp-block-column:first-child {
+		grid-column: 1 / -1;
+	}
+	/* 4 kolumny (marka + 3 grupy): w siatce 2-kol GODZINY OTWARCIA zostawały
+	   samotnie w ostatnim rzędzie z pustą komórką obok. Ostatnia kolumna też na
+	   całą szerokość — brak sieroty. */
+	.bc-site-footer .wp-block-columns > .wp-block-column:last-child {
+		grid-column: 1 / -1;
+	}
+
+	/* Oferta: desktopowy zigzag (zdjęcie raz z lewej, raz z prawej) po zwinięciu
+	   do jednej kolumny dawał raz zdjęcie-nad-tekstem, raz tekst-nad-zdjęciem
+	   („brak zdjęcia przed Relaks"). Na mobile zdjęcie ZAWSZE nad treścią. */
+	.wp-block-columns > .wp-block-column:has(> figure.bc-rounded:not(.bc-fill-img):not(.bc-portrait)) {
+		order: -1;
+	}
+
+	/* #7/#8/#9 Oferta: wiersz ceny przestaje być flex-rzędem (powodował
+	   poziomą przewijankę na wąskim) — nazwa+opis płyną tekstem,
+	   cena dobita na własnej linii po prawej */
+	.bc-price-row {
+		display: block;
+	}
+	.bc-price-row strong:last-child {
+		display: block;
+		margin-left: 0;
+		padding-left: 0;
+		margin-top: 0.35rem;
+		text-align: right;
 	}
 }
