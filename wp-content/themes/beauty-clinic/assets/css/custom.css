@@ -53,14 +53,23 @@ body:not(.home) header.wp-block-template-part {
 
 /* Zdjęcia sekcji na stronie Oferta (zigzag 2-kol, lazy-load) nie miały rezerwacji
    wysokości — figura zwijała się do ~29px zanim lazy-load wczytał obraz, więc
-   zdjęcie wyglądało na brakujące. Rezerwujemy proporcje 3:2 (pliki 900×600), by
+   zdjęcie wyglądało na brakujące. Rezerwujemy proporcje 4:3 (pliki 900×600), by
    miejsce było trzymane i obraz wczytał się płynnie. Selektor celuje wyłącznie w
    zdjęcia sekcji oferty: home „O nas" ma .bc-fill-img, zdjęcia zespołu .bc-portrait. */
-figure.wp-block-image.bc-rounded:not(.bc-fill-img):not(.bc-portrait) img {
-	aspect-ratio: 3 / 2;
+figure.wp-block-image.bc-rounded:not(.bc-fill-img):not(.bc-portrait):not(.bc-product-photo):not(.alignwide) img {
+	aspect-ratio: 4 / 3; /* R10: oferta — zdjęcie wyższe niż kolumna tekstu (alignwide=baner produktów trzyma 21/9) */
 	width: 100%;
 	height: auto;
 	object-fit: cover;
+}
+
+/* Zdjęcie produktu na podstronie: pełny produkt w naturalnych proporcjach,
+   bez kadrowania 3:2 jak banery oferty (R7 — user: „ucina zdjęcie"). */
+figure.wp-block-image.bc-product-photo img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: auto;
+	object-fit: contain;
 }
 
 /* Nazwa salonu w nagłówku — serif, bez podkreślenia */
@@ -113,62 +122,6 @@ figure.wp-block-image.bc-rounded:not(.bc-fill-img):not(.bc-portrait) img {
    :has celuje wyłącznie w wiersz statystyk (bezpośrednie dziecko .bc-stat). */
 .wp-block-columns:has(> .wp-block-column > .bc-card-icon.bc-stat) {
 	text-align: center;
-}
-
-/* ---------- Karty oferty (siatka 2×2 na kremowym tle) ---------- */
-
-.bc-offer-card {
-	background: var(--wp--preset--color--base);
-	border: 1px solid var(--wp--preset--color--sand);
-	border-radius: 8px;
-	padding: 1.75rem;
-}
-
-/* Odstęp między dwiema kartami ułożonymi w jednej kolumnie */
-.wp-block-column > .bc-offer-card + .bc-offer-card {
-	margin-top: 1.5rem;
-}
-
-/* Rozwijana lista zabiegów i cen wewnątrz karty */
-.bc-offer-details {
-	border-top: 1px solid var(--wp--preset--color--sand);
-	margin-top: 1.25rem;
-	padding-top: 1rem;
-}
-
-.bc-offer-details summary {
-	font-weight: 700;
-	font-size: var(--wp--preset--font-size--x-small);
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	color: var(--wp--preset--color--primary-dark);
-	cursor: pointer;
-	list-style: none;
-	position: relative;
-	padding-right: 2rem;
-}
-
-.bc-offer-details summary::-webkit-details-marker {
-	display: none;
-}
-
-.bc-offer-details summary::after {
-	content: "+";
-	position: absolute;
-	right: 0;
-	top: 50%;
-	transform: translateY(-50%);
-	font-size: 1.25rem;
-	font-weight: 300;
-	color: var(--wp--preset--color--primary);
-}
-
-.bc-offer-details[open] summary::after {
-	content: "−";
-}
-
-.bc-offer-details > :not(summary) {
-	margin-top: 0.5rem;
 }
 
 /* ---------- Opinie klientek ---------- */
@@ -334,9 +287,10 @@ html {
 	border-top: 1px solid rgba(197, 165, 114, 0.4);
 }
 
-/* Stopka: stonowane linki — bez podkreślenia, podświetlenie przez fade */
+/* Stopka: stonowane linki — bez podkreślenia, podświetlenie przez fade.
+   Kolor ink (--contrast): stopka jest kremowa; --base (białe) z ciemnej stopki było niewidoczne. */
 .bc-site-footer a {
-	color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
 	text-decoration: none;
 	transition: color 0.25s ease;
 }
@@ -552,7 +506,7 @@ h1, h2, h3 {
 	background: var(--wp--preset--color--base);
 	border: 1px solid var(--wp--preset--color--sand);
 	border-radius: 8px;
-	padding: 1.4rem 1.75rem;
+	padding: 0;
 	transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -561,12 +515,12 @@ h1, h2, h3 {
 	box-shadow: 0 8px 24px rgba(34, 31, 26, 0.06);
 }
 
+/* summary niesie cały padding boxa → klikalny jest CAŁY box, nie tylko tytuł (R6) */
 .bc-zasada summary {
 	cursor: pointer;
 	list-style: none;
 	position: relative;
-	padding-left: 2.6rem;
-	padding-right: 2.5rem;
+	padding: 1.4rem 4.25rem 1.4rem 4.35rem;
 	font-weight: 700;
 	font-size: 1.05rem;
 	color: var(--wp--preset--color--contrast);
@@ -580,7 +534,7 @@ h1, h2, h3 {
 .bc-zasada summary::before {
 	content: "";
 	position: absolute;
-	left: 0;
+	left: 1.75rem;
 	top: 50%;
 	transform: translateY(-50%);
 	width: 1.6rem;
@@ -594,7 +548,7 @@ h1, h2, h3 {
 .bc-zasada summary::after {
 	content: "+";
 	position: absolute;
-	right: 0;
+	right: 1.75rem;
 	top: 50%;
 	transform: translateY(-50%);
 	font-size: 1.4rem;
@@ -608,8 +562,8 @@ h1, h2, h3 {
 
 /* Rozwinięta treść wyrównana do tytułu (za ikoną) */
 .bc-zasada > :not(summary) {
-	margin-top: 0.75rem;
-	padding-left: 2.6rem;
+	margin-top: 0;
+	padding: 0 1.75rem 1.4rem 4.35rem;
 }
 
 .bc-zasada--shield summary::before {
@@ -808,7 +762,6 @@ body.home .bc-site-header.bc-header-solid:has(.wp-block-navigation__responsive-c
 /* Wymaga :has(); bez wsparcia karty pojawiają się razem z sekcją */
 .bc-reveal .wp-block-column:has(> .bc-card),
 .bc-reveal .wp-block-column:has(> .bc-testimonial),
-.bc-reveal .wp-block-column:has(> .bc-offer-card),
 .bc-reveal .bc-zasada {
 	opacity: 0;
 	transform: translateY(24px);
@@ -817,7 +770,6 @@ body.home .bc-site-header.bc-header-solid:has(.wp-block-navigation__responsive-c
 
 .bc-reveal.bc-visible .wp-block-column:has(> .bc-card),
 .bc-reveal.bc-visible .wp-block-column:has(> .bc-testimonial),
-.bc-reveal.bc-visible .wp-block-column:has(> .bc-offer-card),
 .bc-reveal.bc-visible .bc-zasada {
 	opacity: 1;
 	transform: none;
@@ -1160,14 +1112,12 @@ figure.bc-price-table {
 	}
 }
 
-.bc-zasada[open] > :not(summary),
-.bc-offer-details[open] > :not(summary) {
+.bc-zasada[open] > :not(summary) {
 	animation: bc-acc-fade 0.35s ease 0.08s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.bc-zasada[open] > :not(summary),
-	.bc-offer-details[open] > :not(summary) {
+	.bc-zasada[open] > :not(summary) {
 		animation: none;
 	}
 }
@@ -1584,3 +1534,116 @@ body.bc-cb-lock {
 		height: 2rem !important;
 	}
 }
+
+/* ==========================================================================
+   NEW SKIN — uwagi klienta 2026-06-16 (na czystej bazie GitHub).
+   ZŁOTO z logo (#d3a929) NACZELNE, mięta (#6f9c8b) POMOCNICZA (akcent + hover).
+   Baza ma już jasny nagłówek i złote ceny — tu: paleta, logo, hover→mięta,
+   stopka NIE-czarna. Override na końcu = wygrywa kaskadę, łatwy revert.
+   ========================================================================== */
+:root {
+  --wp--preset--color--primary: #d3a929;        /* złoto z logo NEW SKIN */
+  --wp--preset--color--primary-dark: #8c6d12;   /* ciemniejsze złoto do TEKSTU (AA 4.55:1 na kremie) */
+  --wp--preset--color--secondary: #6f9c8b;      /* mięta stonowana — rola: akcent + hover */
+}
+
+/* Logo w headerze (zastępuje tekst marki) — bez sizingu renderowałoby się w pełnym rozmiarze */
+.bc-logo { height: 2.75rem; width: auto; display: block; }
+@media (max-width: 600px) { .bc-logo { height: 2.4rem; } }
+
+/* HOVER = MIĘTA. Złoto prowadzi statycznie; mięta to język interakcji (baza hover'owała w złoto). */
+.bc-site-brand a:hover,
+.bc-site-header .wp-block-navigation a:hover,
+.bc-site-header .wp-block-navigation a:focus-visible,
+body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation a:hover,
+body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation a:focus,
+.entry-content a:where(:not(.wp-element-button)):hover,
+.bc-site-footer a:hover,
+.bc-cb-alt a:hover {
+  color: var(--wp--preset--color--secondary);
+}
+
+/* Złote przyciski → podświetlenie tłem MIĘTOWYM na hover (życzenie klienta) */
+:root :where(.wp-element-button:hover, .wp-block-button__link:hover),
+.wpcf7 input[type="submit"]:hover,
+.wpcf7 input[type="submit"]:focus,
+.bc-cb-fab:hover,
+.bc-cb-fab:focus-visible {
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--contrast);
+  border-color: var(--wp--preset--color--secondary);
+}
+
+/* Przyciski konturowe: hover → mięta */
+.is-style-outline .wp-block-button__link:hover,
+.is-style-outline .wp-block-button__link:focus {
+  border-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--secondary);
+}
+
+/* Stopka JASNA/ciepła (krem — tło+tekst zmienione klasą HTML has-cream/has-contrast).
+   Marka/opis/copyright/social mają WŁASNE has-base-color (białe !important) z ciemnej stopki
+   → na kremie niewidoczne; bijemy je tą samą bronią. Nadtytuły złote, ikony ciemne. */
+.bc-site-footer { color: var(--wp--preset--color--contrast); }
+.bc-site-footer .has-base-color { color: var(--wp--preset--color--contrast) !important; }
+.bc-site-footer .bc-eyebrow { color: var(--wp--preset--color--primary-dark); }
+.bc-site-footer .bc-ico::before { filter: none; }
+.bc-site-footer .wp-block-social-links,
+.bc-site-footer .wp-social-link .wp-block-social-link-anchor { color: var(--wp--preset--color--contrast); }
+/* Opis marki + copyright mają has-sand-color (jasny piasek, !important) → na kremie 1.19:1.
+   Na muted (#635f57 ≈ 6:1 na kremie) — czytelne, ale stonowane jak tekst drugorzędny.
+   (Linki stopki naprawione u źródła: .bc-site-footer a → --contrast.) */
+.bc-site-footer .has-sand-color { color: var(--wp--preset--color--muted) !important; }
+
+/* --- STRUKTURA (uwagi 2026-06-16): karty home „Zobacz więcej", opisy Oferty, linki Produktów --- */
+/* „Zobacz więcej" — bardziej obszerny przycisk (życzenie klienta) */
+.bc-offer-more { margin-top: 1.25rem; }
+.bc-offer-more .wp-block-button__link { padding: 0.85rem 2.4rem; font-size: var(--wp--preset--font-size--small); font-weight: 700; }
+/* Oferta: obszerny opis + adnotacja ceny (pełne ceny w cenniku) */
+.bc-offer-desc { line-height: 1.7; margin-bottom: 1rem; }
+.bc-offer-price-note { font-size: var(--wp--preset--font-size--small); color: var(--wp--preset--color--muted); text-align: center; } /* R9: wyśrodkuj „Zabiegi od…" */
+.bc-offer-price-note strong { color: var(--wp--preset--color--primary-dark); }
+/* R11: cała nota „Zabiegi od…" to jeden link do cennika; kolory zachowane przez strukturę */
+.bc-offer-price-note a { color: var(--wp--preset--color--muted); text-decoration: none; transition: color 0.2s ease; }
+.bc-offer-price-note .bc-cennik-cta { color: var(--wp--preset--color--primary-dark); }
+.bc-offer-price-note a:hover, .bc-offer-price-note a:hover strong, .bc-offer-price-note a:hover .bc-cennik-cta { color: var(--wp--preset--color--secondary); }
+/* „Zabiegi dopasowane do Ciebie": duże zdjęcie + lista zabiegów z opisami.
+   Lista wypełnia DOKŁADNIE wysokość zdjęcia (stretch + pozycje flex:1 rozkładają się równo). */
+.bc-treat-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+.bc-treat-feature-img { margin: 0; order: 2; } /* R2: zdjęcie na prawo, lista na lewo */
+.bc-treat-feature-img img { display: block; width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 8px; }
+.bc-treat-list { display: flex; flex-direction: column; }
+.bc-treat-ul { list-style: none; margin: 0; padding: 0; flex: 1 1 auto; display: flex; flex-direction: column; }
+.bc-treat-ul li { flex: 1 1 0; display: flex; border-bottom: 1px solid var(--wp--preset--color--sand); }
+.bc-treat-ul li:first-child { border-top: 1px solid var(--wp--preset--color--sand); }
+.bc-treat-ul a { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.5rem 0.25rem;
+	color: var(--wp--preset--color--contrast); text-decoration: none; transition: color 0.2s ease; }
+.bc-treat-text { display: flex; flex-direction: column; gap: 0.3rem; }
+.bc-treat-name { font-family: var(--wp--preset--font-family--heading); font-size: clamp(1.15rem, 1.6vw, 1.45rem); line-height: 1.2; color: var(--wp--preset--color--primary-dark); } /* R3: nazwy zabiegów złote (AA na kremie) */
+.bc-treat-desc { font-family: var(--wp--preset--font-family--body); font-size: var(--wp--preset--font-size--small); color: var(--wp--preset--color--muted); }
+.bc-treat-arrow { color: var(--wp--preset--color--primary-dark); font-size: 1.3em; flex: none; }
+.bc-treat-ul a:hover .bc-treat-name, .bc-treat-ul a:hover .bc-treat-arrow { color: var(--wp--preset--color--secondary); }
+.bc-treat-list .wp-block-buttons { justify-content: center; } /* R8: wyśrodkuj przycisk „Zobacz całą ofertę" */
+.bc-treat-list .bc-offer-more { margin-top: 1.75rem; }
+@media (max-width: 781px) {
+	.bc-treat-feature { grid-template-columns: 1fr; gap: 1.75rem; }
+	.bc-treat-feature-img { order: 0; } /* mobile: zdjęcie znów na górze */
+	.bc-treat-feature-img img { aspect-ratio: 4 / 3; height: auto; }
+	.bc-treat-ul li { flex: 0 0 auto; }
+	.bc-treat-ul a { padding: 1.1rem 0.25rem; }
+}
+/* Produkty: kafelki równej wysokości; cena + „Dowiedz się więcej" dociśnięte do dołu (równa linia we wszystkich). */
+.bc-product-grid .bc-card { display: flex; flex-direction: column; height: 100%; position: relative; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.bc-product-grid .bc-card-icon { margin-top: auto; }
+/* Cały kafelek klikalny → podstrona produktu (stretched-link: jeden realny <a>, dostępny klawiaturowo). */
+.bc-product-grid .bc-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(34, 31, 26, 0.10); }
+.bc-product-grid .bc-product-more a::after { content: ""; position: absolute; inset: 0; }
+@media (prefers-reduced-motion: reduce) { .bc-product-grid .bc-card:hover { transform: none; } }
+/* Logo w stopce (zamiast tekstu „NEW SKIN clinic") */
+.bc-footer-logo { height: 3rem; width: auto; display: block; }
+/* Produkty: link „Dowiedz się więcej" → kotwica w Ofercie */
+.bc-product-more { margin-top: 0.75rem; }
+.bc-product-more a { color: var(--wp--preset--color--primary-dark); font-weight: 700; text-decoration: none; }
+
+/* Kotwice kategorii Oferty: odsłaniaj pod sticky-header (klik „Zobacz więcej") */
+h2[id], #mapa { scroll-margin-top: 6rem; } /* R4: kotwica mapy nie chowa się pod sticky-header */
