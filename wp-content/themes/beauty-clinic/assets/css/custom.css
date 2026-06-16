@@ -13,9 +13,9 @@
 	font-weight: 700;
 	letter-spacing: 0.16em;
 	text-transform: uppercase;
-	/* odcień ciemniejszy od primary-dark: na kremie primary-dark daje
-	   4.41:1 — włos poniżej AA dla małego tekstu */
-	color: #7d6342;
+	/* złoto marki #daa520 — spójny złoty wszędzie (decyzja klienta).
+	   UWAGA: na kremie ~2:1, poniżej AA dla małego tekstu. */
+	color: var(--wp--preset--color--primary);
 }
 
 /* Linia pod nagłówkiem sekcji: hairline przez całą szerokość,
@@ -83,13 +83,13 @@ figure.wp-block-image.bc-product-photo img {
 }
 
 .bc-site-brand a:hover {
-	color: var(--wp--preset--color--primary-dark);
+	color: var(--wp--preset--color--primary);
 }
 
 /* Linki nawigacji: spokojny hover w złoto */
 .bc-site-header .wp-block-navigation a:hover,
 .bc-site-header .wp-block-navigation a:focus {
-	color: var(--wp--preset--color--primary-dark);
+	color: var(--wp--preset--color--primary);
 	text-decoration: none;
 }
 
@@ -108,12 +108,12 @@ figure.wp-block-image.bc-product-photo img {
 	box-shadow: 0 12px 32px rgba(34, 31, 26, 0.08);
 }
 
-/* Numer / cena / statystyka na karcie — ciemne złoto: jasne (#c5a572)
-   daje 2.3:1 na bieli, za mało nawet dla dużego tekstu (AA: 3:1) */
+/* Numer / cena / statystyka — złoto marki #daa520 (spójność, decyzja klienta).
+   UWAGA: ~2:1 na bieli, poniżej AA. */
 .bc-card-icon {
 	font-family: var(--wp--preset--font-family--heading);
 	font-size: 1.75rem;
-	color: var(--wp--preset--color--primary-dark);
+	color: var(--wp--preset--color--primary);
 	line-height: 1;
 }
 
@@ -198,7 +198,7 @@ figure.wp-block-image.bc-product-photo img {
 	margin-left: auto;
 	padding-left: 1rem;
 	white-space: nowrap;
-	color: var(--wp--preset--color--primary-dark);
+	color: var(--wp--preset--color--primary);
 }
 
 /* ---------- Formularz kontaktowy (Contact Form 7) ---------- */
@@ -467,19 +467,19 @@ h1, h2, h3 {
 }
 
 .bc-ico-pin::before {
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c5a572' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23daa520' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
 }
 
 .bc-ico-phone::before {
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c5a572' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23daa520' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
 }
 
 .bc-ico-mail::before {
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c5a572' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='20' height='16' rx='2'/%3E%3Cpath d='m22 7-10 5L2 7'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23daa520' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='20' height='16' rx='2'/%3E%3Cpath d='m22 7-10 5L2 7'/%3E%3C/svg%3E");
 }
 
 .bc-ico-clock::before {
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c5a572' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23daa520' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E");
 }
 
 /* ---------- Linki społecznościowe w stopce (Facebook, Instagram) ---------- */
@@ -652,7 +652,7 @@ body.home .bc-site-header .wp-block-navigation__responsive-container.is-menu-ope
 
 body.home .bc-site-header .wp-block-navigation__responsive-container.is-menu-open a:hover,
 body.home .bc-site-header .wp-block-navigation__responsive-container.is-menu-open a:focus {
-	color: var(--wp--preset--color--primary-dark);
+	color: var(--wp--preset--color--primary);
 }
 
 /* Po przewinięciu (klasa z reveal.js): białe tło z rozmyciem i cieniem */
@@ -762,6 +762,7 @@ body.home .bc-site-header.bc-header-solid:has(.wp-block-navigation__responsive-c
 /* Wymaga :has(); bez wsparcia karty pojawiają się razem z sekcją */
 .bc-reveal .wp-block-column:has(> .bc-card),
 .bc-reveal .wp-block-column:has(> .bc-testimonial),
+.bc-reveal .wp-block-column:has(> .bc-offer-card),
 .bc-reveal .bc-zasada {
 	opacity: 0;
 	transform: translateY(24px);
@@ -770,6 +771,7 @@ body.home .bc-site-header.bc-header-solid:has(.wp-block-navigation__responsive-c
 
 .bc-reveal.bc-visible .wp-block-column:has(> .bc-card),
 .bc-reveal.bc-visible .wp-block-column:has(> .bc-testimonial),
+.bc-reveal.bc-visible .wp-block-column:has(> .bc-offer-card),
 .bc-reveal.bc-visible .bc-zasada {
 	opacity: 1;
 	transform: none;
@@ -904,7 +906,7 @@ body.home .bc-site-header.bc-header-solid:has(.wp-block-navigation__responsive-c
 
 /* Aktywna strona oznaczona kolorem, bez podkreślenia */
 .bc-site-header .wp-block-navigation a[aria-current="page"] {
-	color: var(--wp--preset--color--primary-dark);
+	color: var(--wp--preset--color--primary);
 }
 
 /* ---------- Mapa dojazdu (Kontakt) ---------- */
@@ -985,7 +987,7 @@ body.home .bc-site-header.bc-header-solid:has(.wp-block-navigation__responsive-c
 }
 
 :root :where(.wp-element-button:hover, .wp-block-button__link:hover) {
-	background-color: var(--wp--preset--color--primary-dark);
+	background-color: var(--wp--preset--color--primary);
 	color: var(--wp--preset--color--base);
 }
 
@@ -1112,12 +1114,14 @@ figure.bc-price-table {
 	}
 }
 
-.bc-zasada[open] > :not(summary) {
+.bc-zasada[open] > :not(summary),
+.bc-offer-details[open] > :not(summary) {
 	animation: bc-acc-fade 0.35s ease 0.08s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.bc-zasada[open] > :not(summary) {
+	.bc-zasada[open] > :not(summary),
+	.bc-offer-details[open] > :not(summary) {
 		animation: none;
 	}
 }
@@ -1346,7 +1350,7 @@ body.bc-cb-lock {
 	border-radius: 50%;
 	display: grid;
 	place-items: center;
-	color: var(--wp--preset--color--primary-dark);
+	color: var(--wp--preset--color--primary);
 }
 
 .bc-cb-success-ico svg {
@@ -1373,7 +1377,7 @@ body.bc-cb-lock {
 }
 
 .bc-cb-alt a {
-	color: var(--wp--preset--color--primary-dark);
+	color: var(--wp--preset--color--primary);
 	font-weight: 700;
 	text-decoration: none;
 	transition: color 0.25s ease;
@@ -1537,13 +1541,13 @@ body.bc-cb-lock {
 
 /* ==========================================================================
    NEW SKIN — uwagi klienta 2026-06-16 (na czystej bazie GitHub).
-   ZŁOTO z logo (#d3a929) NACZELNE, mięta (#6f9c8b) POMOCNICZA (akcent + hover).
+   ZŁOTO z logo (#daa520) NACZELNE, mięta (#6f9c8b) POMOCNICZA (akcent + hover).
    Baza ma już jasny nagłówek i złote ceny — tu: paleta, logo, hover→mięta,
    stopka NIE-czarna. Override na końcu = wygrywa kaskadę, łatwy revert.
    ========================================================================== */
 :root {
-  --wp--preset--color--primary: #d3a929;        /* złoto z logo NEW SKIN */
-  --wp--preset--color--primary-dark: #8c6d12;   /* ciemniejsze złoto do TEKSTU (AA 4.55:1 na kremie) */
+  --wp--preset--color--primary: #daa520;        /* złoto z logo NEW SKIN */
+  --wp--preset--color--primary-dark: #8c6d12;   /* ciemne złoto: TŁO hover przycisku + outline fokusu (już nie tekst) */
   --wp--preset--color--secondary: #6f9c8b;      /* mięta stonowana — rola: akcent + hover */
 }
 
@@ -1586,7 +1590,7 @@ body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation a:focus,
    → na kremie niewidoczne; bijemy je tą samą bronią. Nadtytuły złote, ikony ciemne. */
 .bc-site-footer { color: var(--wp--preset--color--contrast); }
 .bc-site-footer .has-base-color { color: var(--wp--preset--color--contrast) !important; }
-.bc-site-footer .bc-eyebrow { color: var(--wp--preset--color--primary-dark); }
+.bc-site-footer .bc-eyebrow { color: var(--wp--preset--color--primary); }
 .bc-site-footer .bc-ico::before { filter: none; }
 .bc-site-footer .wp-block-social-links,
 .bc-site-footer .wp-social-link .wp-block-social-link-anchor { color: var(--wp--preset--color--contrast); }
@@ -1595,42 +1599,61 @@ body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation a:focus,
    (Linki stopki naprawione u źródła: .bc-site-footer a → --contrast.) */
 .bc-site-footer .has-sand-color { color: var(--wp--preset--color--muted) !important; }
 
-/* --- STRUKTURA (uwagi 2026-06-16): karty home „Zobacz więcej", opisy Oferty, linki Produktów --- */
-/* „Zobacz więcej" — bardziej obszerny przycisk (życzenie klienta) */
-.bc-offer-more { margin-top: 1.25rem; }
-.bc-offer-more .wp-block-button__link { padding: 0.85rem 2.4rem; font-size: var(--wp--preset--font-size--small); font-weight: 700; }
+/* --- STRUKTURA (uwagi 2026-06-16): opisy Oferty, linki Produktów --- */
 /* Oferta: obszerny opis + adnotacja ceny (pełne ceny w cenniku) */
 .bc-offer-desc { line-height: 1.7; margin-bottom: 1rem; }
 .bc-offer-price-note { font-size: var(--wp--preset--font-size--small); color: var(--wp--preset--color--muted); text-align: center; } /* R9: wyśrodkuj „Zabiegi od…" */
-.bc-offer-price-note strong { color: var(--wp--preset--color--primary-dark); }
+.bc-offer-price-note strong { color: var(--wp--preset--color--primary); }
 /* R11: cała nota „Zabiegi od…" to jeden link do cennika; kolory zachowane przez strukturę */
 .bc-offer-price-note a { color: var(--wp--preset--color--muted); text-decoration: none; transition: color 0.2s ease; }
-.bc-offer-price-note .bc-cennik-cta { color: var(--wp--preset--color--primary-dark); }
+.bc-offer-price-note .bc-cennik-cta { color: var(--wp--preset--color--primary); }
 .bc-offer-price-note a:hover, .bc-offer-price-note a:hover strong, .bc-offer-price-note a:hover .bc-cennik-cta { color: var(--wp--preset--color--secondary); }
-/* „Zabiegi dopasowane do Ciebie": duże zdjęcie + lista zabiegów z opisami.
-   Lista wypełnia DOKŁADNIE wysokość zdjęcia (stretch + pozycje flex:1 rozkładają się równo). */
-.bc-treat-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
-.bc-treat-feature-img { margin: 0; order: 2; } /* R2: zdjęcie na prawo, lista na lewo */
-.bc-treat-feature-img img { display: block; width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 8px; }
-.bc-treat-list { display: flex; flex-direction: column; }
-.bc-treat-ul { list-style: none; margin: 0; padding: 0; flex: 1 1 auto; display: flex; flex-direction: column; }
-.bc-treat-ul li { flex: 1 1 0; display: flex; border-bottom: 1px solid var(--wp--preset--color--sand); }
-.bc-treat-ul li:first-child { border-top: 1px solid var(--wp--preset--color--sand); }
-.bc-treat-ul a { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.5rem 0.25rem;
-	color: var(--wp--preset--color--contrast); text-decoration: none; transition: color 0.2s ease; }
-.bc-treat-text { display: flex; flex-direction: column; gap: 0.3rem; }
-.bc-treat-name { font-family: var(--wp--preset--font-family--heading); font-size: clamp(1.15rem, 1.6vw, 1.45rem); line-height: 1.2; color: var(--wp--preset--color--primary-dark); } /* R3: nazwy zabiegów złote (AA na kremie) */
-.bc-treat-desc { font-family: var(--wp--preset--font-family--body); font-size: var(--wp--preset--font-size--small); color: var(--wp--preset--color--muted); }
-.bc-treat-arrow { color: var(--wp--preset--color--primary-dark); font-size: 1.3em; flex: none; }
-.bc-treat-ul a:hover .bc-treat-name, .bc-treat-ul a:hover .bc-treat-arrow { color: var(--wp--preset--color--secondary); }
-.bc-treat-list .wp-block-buttons { justify-content: center; } /* R8: wyśrodkuj przycisk „Zobacz całą ofertę" */
-.bc-treat-list .bc-offer-more { margin-top: 1.75rem; }
-@media (max-width: 781px) {
-	.bc-treat-feature { grid-template-columns: 1fr; gap: 1.75rem; }
-	.bc-treat-feature-img { order: 0; } /* mobile: zdjęcie znów na górze */
-	.bc-treat-feature-img img { aspect-ratio: 4 / 3; height: auto; }
-	.bc-treat-ul li { flex: 0 0 auto; }
-	.bc-treat-ul a { padding: 1.1rem 0.25rem; }
+/* ---------- Karty oferty (siatka 2×2 na kremowym tle) — przywrócone przy revercie sekcji ---------- */
+.bc-offer-card {
+	background: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--sand);
+	border-radius: 8px;
+	padding: 1.75rem;
+}
+/* Odstęp między dwiema kartami ułożonymi w jednej kolumnie */
+.wp-block-column > .bc-offer-card + .bc-offer-card {
+	margin-top: 1.5rem;
+}
+/* Rozwijana lista zabiegów i cen wewnątrz karty */
+.bc-offer-details {
+	border-top: 1px solid var(--wp--preset--color--sand);
+	margin-top: 1.25rem;
+	padding-top: 1rem;
+}
+.bc-offer-details summary {
+	font-weight: 700;
+	font-size: var(--wp--preset--font-size--x-small);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--primary);
+	cursor: pointer;
+	list-style: none;
+	position: relative;
+	padding-right: 2rem;
+}
+.bc-offer-details summary::-webkit-details-marker {
+	display: none;
+}
+.bc-offer-details summary::after {
+	content: "+";
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.25rem;
+	font-weight: 300;
+	color: var(--wp--preset--color--primary);
+}
+.bc-offer-details[open] summary::after {
+	content: "−";
+}
+.bc-offer-details > :not(summary) {
+	margin-top: 0.5rem;
 }
 /* Produkty: kafelki równej wysokości; cena + „Dowiedz się więcej" dociśnięte do dołu (równa linia we wszystkich). */
 .bc-product-grid .bc-card { display: flex; flex-direction: column; height: 100%; position: relative; transition: transform 0.2s ease, box-shadow 0.2s ease; }
@@ -1643,7 +1666,7 @@ body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation a:focus,
 .bc-footer-logo { height: 3rem; width: auto; display: block; }
 /* Produkty: link „Dowiedz się więcej" → kotwica w Ofercie */
 .bc-product-more { margin-top: 0.75rem; }
-.bc-product-more a { color: var(--wp--preset--color--primary-dark); font-weight: 700; text-decoration: none; }
+.bc-product-more a { color: var(--wp--preset--color--primary); font-weight: 700; text-decoration: none; }
 
 /* Kotwice kategorii Oferty: odsłaniaj pod sticky-header (klik „Zobacz więcej") */
 h2[id], #mapa { scroll-margin-top: 6rem; } /* R4: kotwica mapy nie chowa się pod sticky-header */
