@@ -1603,6 +1603,10 @@ body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation a:focus,
 .bc-offer-desc { line-height: 1.7; margin-bottom: 1rem; }
 .bc-offer-price-note { font-size: var(--wp--preset--font-size--small); color: var(--wp--preset--color--muted); text-align: center; } /* R9: wyśrodkuj „Zabiegi od…" */
 .bc-offer-price-note strong { color: var(--wp--preset--color--primary-dark); }
+/* R11: cała nota „Zabiegi od…" to jeden link do cennika; kolory zachowane przez strukturę */
+.bc-offer-price-note a { color: var(--wp--preset--color--muted); text-decoration: none; transition: color 0.2s ease; }
+.bc-offer-price-note .bc-cennik-cta { color: var(--wp--preset--color--primary-dark); }
+.bc-offer-price-note a:hover, .bc-offer-price-note a:hover strong, .bc-offer-price-note a:hover .bc-cennik-cta { color: var(--wp--preset--color--secondary); }
 /* „Zabiegi dopasowane do Ciebie": duże zdjęcie + lista zabiegów z opisami.
    Lista wypełnia DOKŁADNIE wysokość zdjęcia (stretch + pozycje flex:1 rozkładają się równo). */
 .bc-treat-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
