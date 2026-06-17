@@ -598,6 +598,12 @@ h1, h2, h3 {
 		box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
+/* Zalogowany admin: pasek #wpadminbar jest fixed (32px / 46px na mobile) i przykrywa
+   górę fixed-headera na stronie głównej. Spychamy header poniżej paska. Gość strony
+   NIE ma klasy .admin-bar, więc u niego nagłówek zostaje na samej górze (bez zmian). */
+body.home.admin-bar .bc-site-header { top: 32px; }
+@media screen and (max-width: 782px) { body.home.admin-bar .bc-site-header { top: 46px; } }
+
 /* Na stronie głównej nagłówek leży NA zdjęciu hero: przezroczysty,
    z delikatnym ciemnym gradientem od góry dla czytelności tekstu.
    (Fallback bez JS przywraca biały sticky — patrz functions.php.) */
