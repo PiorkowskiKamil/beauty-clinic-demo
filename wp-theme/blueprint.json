@@ -1,0 +1,10 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/oferta/",
+	"preferredVersions": { "php": "8.3", "wp": "latest" },
+	"steps": [
+		{ "step": "setSiteOptions", "options": { "permalink_structure": "/%postname%/", "blogname": "NEW SKIN clinic" } },
+		{ "step": "importWxr", "file": { "resource": "vfs", "path": "/tmp/content.wxr" } },
+		{ "step": "runPHP", "code": "<?php require_once '/wordpress/wp-load.php'; flush_rewrite_rules(true);" }
+	]
+}

@@ -1,0 +1,16 @@
+/*
+Theme Name: NEW SKIN clinic
+Theme URI: https://piorkowskikamil.github.io/beauty-clinic-demo/
+Author: Kamil Piórkowski
+Description: Motyw blokowy salonu kosmetycznego NEW SKIN clinic — konwersja statycznego snapshotu (GitHub Pages) na pełnoprawny motyw WordPress. Paleta: złoto #daa520 + mięta #6f9c8b; typografia Playfair Display + Lato.
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 7.4
+Version: 1.0.0
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: newskin-clinic
+*/
+
+/* Style komponentów ładuje assets/css/custom.css (enqueue w functions.php).
+   theme.json niesie paletę, typografię i spacing. */
