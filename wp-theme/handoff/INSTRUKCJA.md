@@ -28,16 +28,16 @@ Gotowe. Strona główna działa od razu (jest wbudowana w motyw). Reszta jest w 
 ## Logowanie i edycja treści
 
 - **Logowanie:** `twojadomena.pl/wp-admin`, loginem administratora ustawionym przy instalacji WordPressa.
-- **Edycja podstrony:** *Strony* → otwórz stronę → zobaczysz blok **„HTML własny"** → *Edytuj jako HTML* → zmień tekst/ceny → *Aktualizuj*.
+- **Edycja podstrony:** *Strony* → otwórz stronę → edytujesz **wizualnie, blokami** (klikasz nagłówek/akapit i piszesz, przesuwasz sekcje) → *Aktualizuj*.
 
-**Jak realnie działa edycja (ważne, żeby wiedzieć z góry):**
-- Treść pochodzi z eksportu statycznego, więc każda strona to JEDEN blok „HTML własny" (surowy HTML), a nie osobne klocki Gutenberga.
-- Zmiana **tekstu, cen, opisów** — prosta: znajdź tekst w HTML i popraw.
-- Zmiana **układu / przeciąganie sekcji** — wymaga znajomości HTML (to nie jest wizualna edycja klockami).
-- **Zdjęcia:** podmień adres w `<img src="...">` albo wgraj nowe w *Media* i wstaw ścieżkę.
-- **Strona główna** jest w motywie: Wygląd → *Edytor* → Szablony → *Strona główna* (też jako „HTML własny").
+**Jak działa edycja:**
+- Treść każdej podstrony to **natywne bloki Gutenberga** (grupy, nagłówki, akapity, kolumny, zdjęcia, akordeony) — pełna wizualna edycja jak na zwykłej stronie WordPress.
+- Zmiana **tekstu, cen, opisów** — kliknij blok i pisz.
+- Zmiana **układu** — przeciągaj/dodawaj bloki w edytorze albo w *Widoku listy* (ikona drzewka w lewym górnym pasku — pokazuje całą strukturę strony).
+- **Zdjęcia:** kliknij blok obrazka → *Zastąp* → wgraj nowe lub wybierz z *Mediów*.
+- **Strona główna** edytuje się w: Wygląd → *Edytor* → Szablony → *Strona główna* (też natywne bloki).
 
-> Chcesz pełną, **wizualną** edycję klockami (przeciąganie sekcji jak w zwykłym WordPressie)? To osobny, większy etap — przepisanie sekcji na natywne bloki. Daj znać Kamilowi, jeśli to potrzebne.
+> **Dwa wyjątki** (zostały jako pojedynczy blok „HTML własny", bo to niestandardowe komponenty): **cennik** (lista cen — edytujesz ceny w tym jednym bloku jako HTML) i **formularz na Kontakcie**. Formularz docelowo wstaw natywnie wtyczką Contact Form 7 (shortcode) — patrz krok 2 instalacji; obecny to placeholder wyglądu.
 
 ## Ważne uwagi
 

@@ -28,25 +28,25 @@ add_action(
 		// Self-hostowane fonty Lato + Playfair Display (subset latin + latin-ext).
 		wp_enqueue_style( 'newskin-fonts', $dir . '/assets/css/fonts.css', array(), $ver );
 
-		// Style bloków rdzenia (columns flex-basis, image, button base, group, table, separator...).
-		// Motyw blokowy NIE ładuje ich dla surowego HTML (brak delimiterów `<!-- wp: -->` => zero
-		// wykrytych bloków). wp_enqueue_style('wp-block-library') NIE działa (optymalizacja motywu
-		// blokowego pomija arkusz). Pakujemy WSZYSTKIE inline-CSS bloków ze statyku w jeden plik —
-		// to samo, co robił eksport, tylko jako jeden <link>. Bez tego np. kolumny gubią szerokości.
-		wp_enqueue_style( 'newskin-core-blocks', $dir . '/assets/blocks/core-blocks.css', array(), $ver );
+		// Treść STRON to natywne bloki — WP sam ładuje style bloków rdzenia (wp-block-library +
+		// per-block inline CSS) i regeneruje per-instance layout z atrybutów. Dlatego core-blocks.css
+		// USUNIĘTY (był nie tylko duplikatem — redefiniował :root{--wp--preset--font-size--huge:42px},
+		// bijąc fluid-typografię z theme.json → h1 42px zamiast 60px).
 
-		// Bloki navigation/cover były w statyku LINKOWANE osobno (nie inline) — nie ma ich w core-blocks.css.
-		// navigation.css niesie m.in. regułę responsywną (hamburger tylko < 600px).
+		// Bloki navigation/cover miały w statyku własne, dostrojone reguły (nav: hamburger tylko < 600px).
 		wp_enqueue_style( 'newskin-block-navigation', $dir . '/assets/blocks/navigation.css', array(), $ver );
 		wp_enqueue_style( 'newskin-block-cover', $dir . '/assets/blocks/cover.css', array(), $ver );
 
-		// Tier-3: per-instance layout-support (.wp-container-*, justification, outline) — WP nie regeneruje
-		// tego dla surowego HTML (brak delimiterów bloków), więc dostarczamy wyekstrahowane reguły ze statyku.
-		// Po core-blocks, by reguły instancyjne i outline (przezroczyste tło) wygrywały z generycznymi.
-		wp_enqueue_style( 'newskin-layout', $dir . '/assets/css/wp-layout.css', array( 'newskin-core-blocks' ), $ver );
+		// wp-layout.css ZOSTAJE: header.html i footer.html to wciąż surowy HTML (blok wp:html) używający
+		// ORYGINALNYCH hashy eksportu (aa50a3a3/c24ceac7/0caefaff…). WP nie regeneruje dla nich
+		// per-instance layoutu (brak wykrytych bloków), więc bez tego pliku flex-row nagłówka traci
+		// justify-content:space-between + flex-wrap:nowrap (logo|menu|przycisk zlewają się). Reguły
+		// dla starych hashy treści stron są martwe (natywne bloki dostają nowe hashe) — nieszkodliwe.
+		// NIE zawiera nadpisań font-size (czysty per-instance layout + outline) — fix typografii trzyma.
+		wp_enqueue_style( 'newskin-layout', $dir . '/assets/css/wp-layout.css', array(), $ver );
 
 		// Komponentowy CSS na końcu — nadpisuje style bloków (radius przycisku, kolory nav itd.).
-		wp_enqueue_style( 'newskin-custom', $dir . '/assets/css/custom.css', array( 'newskin-core-blocks', 'newskin-fonts', 'newskin-block-navigation', 'newskin-block-cover', 'newskin-layout' ), $ver );
+		wp_enqueue_style( 'newskin-custom', $dir . '/assets/css/custom.css', array( 'newskin-fonts', 'newskin-block-navigation', 'newskin-block-cover', 'newskin-layout' ), $ver );
 
 		// FAB + modal + reveal-on-scroll + animowane <details> (w stopce).
 		wp_enqueue_script( 'newskin-reveal', $dir . '/assets/js/reveal.js', array(), $ver, true );
@@ -58,5 +58,21 @@ add_action(
 	'after_setup_theme',
 	function () {
 		register_nav_menus( array( 'primary' => __( 'Menu główne', 'newskin-clinic' ) ) );
+
+		// Płótno edytora (Wygląd → Edytor / edytor stron) ładuje TYLKO arkusze zgłoszone tutaj —
+		// front-endowe enqueue (wp_enqueue_scripts) tam nie docierają. Bez tego blok Navigation
+		// renderuje się w edytorze „nago" (lista z kropkami + hamburger i X naraz). Zgłaszamy te
+		// same arkusze co front, w tej samej kolejności, by podgląd w edytorze pasował do żywej
+		// strony. Czysto kosmetyczne dla edytora — front bez zmian (osobny hook).
+		add_theme_support( 'editor-styles' );
+		add_editor_style(
+			array(
+				'assets/css/fonts.css',
+				'assets/blocks/navigation.css',
+				'assets/blocks/cover.css',
+				'assets/css/wp-layout.css',
+				'assets/css/custom.css',
+			)
+		);
 	}
 );

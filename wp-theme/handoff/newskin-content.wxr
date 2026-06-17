@@ -16,125 +16,155 @@
 		<title>O nas</title>
 		<link>https://newskin.local/o-nas/</link>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<content:encoded><![CDATA[<!-- wp:html -->
-<div class="wp-block-group alignfull has-cream-background-color has-background has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><h1 class="has-text-align-center wp-block-post-title">O nas</h1></div>
+		<content:encoded><![CDATA[
+<!-- wp:group {"align":"full","backgroundColor":"cream","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-cream-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+<!-- wp:heading {"textAlign":"center","level":1} -->
+<h1 class="wp-block-heading has-text-align-center wp-block-post-title">O&nbsp;nas</h1>
+<!-- /wp:heading -->
+</div>
+<!-- /wp:group -->
 
-
-
-<div class="wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:paragraph {"textAlign":"center","className":"bc-eyebrow"} -->
 <p class="has-text-align-center bc-eyebrow wp-block-paragraph">Nasza misja</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:heading {"textAlign":"center"} -->
 <h2 class="wp-block-heading has-text-align-center">Piękno to zdrowa, zadbana skóra</h2>
+<!-- /wp:heading -->
 
+<!-- wp:paragraph {"textAlign":"center"} -->
+<p class="has-text-align-center wp-block-paragraph">NEW SKIN clinic powstało z&nbsp;przekonania, że dobra pielęgnacja nie potrzebuje wielkich obietnic, tylko wiedzy, uważności i&nbsp;czasu. Nie obiecujemy metamorfoz w&nbsp;godzinę. Obiecujemy rzetelną diagnozę, plan pielęgnacji dopasowany do Ciebie i&nbsp;zabiegi wykonywane spokojnie, starannie i&nbsp;z troską.</p>
+<!-- /wp:paragraph -->
 
-
-<p class="has-text-align-center wp-block-paragraph">NEW SKIN clinic powstało z przekonania, że dobra pielęgnacja nie potrzebuje wielkich obietnic, tylko wiedzy, uważności i czasu. Nie obiecujemy metamorfoz w godzinę. Obiecujemy rzetelną diagnozę, plan pielęgnacji dopasowany do Ciebie i zabiegi wykonywane spokojnie, starannie i z troską.</p>
-
-
-
+<!-- wp:paragraph {"textColor":"muted","textAlign":"center"} -->
 <p class="has-text-align-center has-muted-color has-text-color wp-block-paragraph">Od pierwszej wizyty prowadzimy kartę pielęgnacji, dzięki której każdy kolejny zabieg buduje efekt poprzedniego.</p>
+<!-- /wp:paragraph -->
 </div>
+<!-- /wp:group -->
 
-
-
-<div class="wp-block-group alignfull has-cream-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-2a728030 wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:group {"align":"full","backgroundColor":"cream","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained","contentSize":"75rem"}} -->
+<div class="wp-block-group alignfull has-cream-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:paragraph {"textAlign":"center","className":"bc-eyebrow"} -->
 <p class="has-text-align-center bc-eyebrow wp-block-paragraph">Wartości</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:heading {"textAlign":"center"} -->
 <h2 class="wp-block-heading has-text-align-center">Pięć zasad, których się trzymamy</h2>
+<!-- /wp:heading -->
 
-
-
+<!-- wp:spacer {"height":"1.5rem"} -->
 <div style="height:1.5rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
-
-
-<div class="wp-block-group has-global-padding is-layout-constrained wp-container-core-group-is-layout-29f928e4 wp-block-group-is-layout-constrained">
-<details class="wp-block-details bc-zasada bc-zasada--shield is-layout-flow wp-block-details-is-layout-flow"><summary>Bezpieczeństwo przede wszystkim</summary>
-<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Wywiad, diagnoza i dobór zabiegu zawsze poprzedzają pielęgnację. Jeśli zabieg nie jest dla Ciebie, powiemy to wprost.</p>
+<!-- wp:group {"layout":{"type":"constrained","contentSize":"50rem"}} -->
+<div class="wp-block-group">
+<!-- wp:details {"className":"bc-zasada bc-zasada--shield","summary":"Bezpieczeństwo przede wszystkim"} -->
+<details class="wp-block-details bc-zasada bc-zasada--shield"><summary>Bezpieczeństwo przede wszystkim</summary>
+<!-- wp:paragraph {"textColor":"muted"} -->
+<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Wywiad, diagnoza i&nbsp;dobór zabiegu zawsze poprzedzają pielęgnację. Jeśli zabieg nie jest dla Ciebie, powiemy to wprost.</p>
+<!-- /wp:paragraph -->
 </details>
+<!-- /wp:details -->
 
-
-
-<details class="wp-block-details bc-zasada bc-zasada--plan is-layout-flow wp-block-details-is-layout-flow"><summary>Indywidualny plan pielęgnacji</summary>
-<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Nie ma dwóch takich samych skór. Plan zabiegów układamy pod Twoje potrzeby, tryb życia i budżet.</p>
+<!-- wp:details {"className":"bc-zasada bc-zasada--plan","summary":"Indywidualny plan pielęgnacji"} -->
+<details class="wp-block-details bc-zasada bc-zasada--plan"><summary>Indywidualny plan pielęgnacji</summary>
+<!-- wp:paragraph {"textColor":"muted"} -->
+<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Nie ma dwóch takich samych skór. Plan zabiegów układamy pod Twoje potrzeby, tryb życia i&nbsp;budżet.</p>
+<!-- /wp:paragraph -->
 </details>
+<!-- /wp:details -->
 
-
-
-<details class="wp-block-details bc-zasada bc-zasada--leaf is-layout-flow wp-block-details-is-layout-flow"><summary>Naturalne efekty</summary>
-<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Podkreślamy to, co w Tobie najlepsze, bez sztucznych, przerysowanych rezultatów.</p>
+<!-- wp:details {"className":"bc-zasada bc-zasada--leaf","summary":"Naturalne efekty"} -->
+<details class="wp-block-details bc-zasada bc-zasada--leaf"><summary>Naturalne efekty</summary>
+<!-- wp:paragraph {"textColor":"muted"} -->
+<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Podkreślamy to, co w&nbsp;Tobie najlepsze, bez sztucznych, przerysowanych rezultatów.</p>
+<!-- /wp:paragraph -->
 </details>
+<!-- /wp:details -->
 
-
-
-<details class="wp-block-details bc-zasada bc-zasada--award is-layout-flow wp-block-details-is-layout-flow"><summary>Certyfikowane produkty i sprzęt</summary>
-<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Pracujemy wyłącznie na dermokosmetykach o udokumentowanym działaniu i na atestowanych urządzeniach.</p>
+<!-- wp:details {"className":"bc-zasada bc-zasada--award","summary":"Certyfikowane produkty i&nbsp;sprzęt"} -->
+<details class="wp-block-details bc-zasada bc-zasada--award"><summary>Certyfikowane produkty i&nbsp;sprzęt</summary>
+<!-- wp:paragraph {"textColor":"muted"} -->
+<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Pracujemy wyłącznie na dermokosmetykach o&nbsp;udokumentowanym działaniu i&nbsp;na atestowanych urządzeniach.</p>
+<!-- /wp:paragraph -->
 </details>
+<!-- /wp:details -->
 
-
-
-<details class="wp-block-details bc-zasada bc-zasada--rozwoj is-layout-flow wp-block-details-is-layout-flow"><summary>Ciągły rozwój</summary>
-<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Regularne szkolenia i kursy to u nas standard, bo kosmetologia idzie do przodu, a my razem z nią.</p>
+<!-- wp:details {"className":"bc-zasada bc-zasada--rozwoj","summary":"Ciągły rozwój"} -->
+<details class="wp-block-details bc-zasada bc-zasada--rozwoj"><summary>Ciągły rozwój</summary>
+<!-- wp:paragraph {"textColor":"muted"} -->
+<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Regularne szkolenia i&nbsp;kursy to u&nbsp;nas standard, bo kosmetologia idzie do przodu, a&nbsp;my razem z&nbsp;nią.</p>
+<!-- /wp:paragraph -->
 </details>
+<!-- /wp:details -->
 </div>
+<!-- /wp:group -->
 </div>
+<!-- /wp:group -->
 
-
-
-<div class="wp-block-group alignfull has-global-padding is-layout-constrained wp-container-core-group-is-layout-2a728030 wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained","contentSize":"75rem"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:paragraph {"textAlign":"center","className":"bc-eyebrow"} -->
 <p class="has-text-align-center bc-eyebrow wp-block-paragraph">Zespół</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:heading {"textAlign":"center"} -->
 <h2 class="wp-block-heading has-text-align-center">Poznaj nasze specjalistki</h2>
+<!-- /wp:heading -->
 
-
-
+<!-- wp:spacer {"height":"1.5rem"} -->
 <div style="height:1.5rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"1.5rem","left":"3rem"}}}} -->
+<div class="wp-block-columns alignwide">
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"bc-rounded bc-portrait"} -->
+<figure class="wp-block-image size-full bc-rounded bc-portrait"><img src="/wp-content/themes/newskin-clinic/assets/images/zespol-1.jpg" alt="Marta Kowalska, kosmetolog i założycielka NEW SKIN clinic"></figure>
+<!-- /wp:image -->
 
-
-<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-86559df1 wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-<figure class="wp-block-image size-full bc-rounded bc-portrait"><img decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/zespol-1.jpg" alt="Marta Kowalska, kosmetolog i założycielka NEW SKIN clinic"/></figure>
-
-
-
+<!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading has-x-large-font-size">Marta Kowalska</h3>
+<!-- /wp:heading -->
 
-
-
+<!-- wp:paragraph {"className":"bc-eyebrow"} -->
 <p class="bc-eyebrow wp-block-paragraph">Kosmetolog, założycielka</p>
+<!-- /wp:paragraph -->
 
-
-
-<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Magister kosmetologii z 12-letnim doświadczeniem. Specjalizuje się w pielęgnacji przeciwstarzeniowej i terapiach skór problematycznych. Wierzy, że dobry zabieg zaczyna się od rozmowy.</p>
+<!-- wp:paragraph {"textColor":"muted"} -->
+<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Magister kosmetologii z&nbsp;12-letnim doświadczeniem. Specjalizuje się w&nbsp;pielęgnacji przeciwstarzeniowej i&nbsp;terapiach skór problematycznych. Wierzy, że dobry zabieg zaczyna się od rozmowy.</p>
+<!-- /wp:paragraph -->
 </div>
+<!-- /wp:column -->
 
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"bc-rounded bc-portrait"} -->
+<figure class="wp-block-image size-full bc-rounded bc-portrait"><img src="/wp-content/themes/newskin-clinic/assets/images/zespol-2.jpg" alt="Joanna Nowak, kosmetolog i specjalistka SPA"></figure>
+<!-- /wp:image -->
 
-
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-<figure class="wp-block-image size-full bc-rounded bc-portrait"><img loading="lazy" decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/zespol-2.jpg" alt="Joanna Nowak, kosmetolog i specjalistka SPA"/></figure>
-
-
-
+<!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading has-x-large-font-size">Joanna Nowak</h3>
+<!-- /wp:heading -->
 
-
-
+<!-- wp:paragraph {"className":"bc-eyebrow"} -->
 <p class="bc-eyebrow wp-block-paragraph">Kosmetolog, specjalistka SPA</p>
+<!-- /wp:paragraph -->
 
-
-
-<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Mistrzyni masażu i rytuałów SPA. Łączy techniki relaksacyjne z pielęgnacją ciała, dbając o to, żeby każda wizyta była też chwilą prawdziwego odpoczynku.</p>
+<!-- wp:paragraph {"textColor":"muted"} -->
+<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Mistrzyni masażu i&nbsp;rytuałów SPA. Łączy techniki relaksacyjne z&nbsp;pielęgnacją ciała, dbając o&nbsp;to, żeby każda wizyta była też chwilą prawdziwego odpoczynku.</p>
+<!-- /wp:paragraph -->
 </div>
+<!-- /wp:column -->
 </div>
+<!-- /wp:columns -->
 </div>
-<!-- /wp:html -->]]></content:encoded>
+<!-- /wp:group -->
+]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>101</wp:post_id>
 		<wp:post_date><![CDATA[2026-06-17 10:00:00]]></wp:post_date>
@@ -150,157 +180,199 @@
 		<title>Oferta</title>
 		<link>https://newskin.local/oferta/</link>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<content:encoded><![CDATA[<!-- wp:html -->
-<div class="wp-block-group alignfull has-cream-background-color has-background has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><h1 class="has-text-align-center wp-block-post-title">Oferta</h1></div>
+		<content:encoded><![CDATA[
+<!-- wp:group {"align":"full","backgroundColor":"cream","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-cream-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+<!-- wp:heading {"textAlign":"center","level":1} -->
+<h1 class="wp-block-heading has-text-align-center wp-block-post-title">Oferta</h1>
+<!-- /wp:heading -->
+</div>
+<!-- /wp:group -->
 
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained","contentSize":"75rem"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:paragraph {"textColor":"muted","textAlign":"center"} -->
+<p class="has-text-align-center has-muted-color has-text-color wp-block-paragraph">Każdy zabieg poprzedza krótka konsultacja. Nie wiesz, co wybrać? Zadzwoń, a&nbsp;doradzimy.</p>
+<!-- /wp:paragraph -->
 
-
-<div class="wp-block-group alignfull has-global-padding is-layout-constrained wp-container-core-group-is-layout-f464533f wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
-<p class="has-text-align-center has-muted-color has-text-color wp-block-paragraph">Każdy zabieg poprzedza krótka konsultacja. Nie wiesz, co wybrać? Zadzwoń, a doradzimy.</p>
-
-
-
+<!-- wp:spacer {"height":"2rem"} -->
 <div style="height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
-
-
-<div class="wp-block-columns alignwide are-vertically-aligned-center is-layout-flex wp-container-core-columns-is-layout-86559df1 wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:38%">
-<figure class="wp-block-image size-full bc-rounded"><img decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/zabieg-twarz.jpg" alt="Zabieg pielęgnacyjny na twarz"/></figure>
+<!-- wp:columns {"align":"wide","verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"1.5rem","left":"3rem"}}}} -->
+<div class="wp-block-columns alignwide are-vertically-aligned-center">
+<!-- wp:column {"verticalAlignment":"center","width":"38%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:38%">
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"bc-rounded"} -->
+<figure class="wp-block-image size-full bc-rounded"><img src="/wp-content/themes/newskin-clinic/assets/images/zabieg-twarz.jpg" alt="Zabieg pielęgnacyjny na twarz"></figure>
+<!-- /wp:image -->
 </div>
+<!-- /wp:column -->
 
-
-
-<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow">
+<!-- wp:column {"verticalAlignment":"center"} -->
+<div class="wp-block-column is-vertically-aligned-center">
+<!-- wp:paragraph {"textAlign":"center","className":"bc-eyebrow"} -->
 <p class="has-text-align-center bc-eyebrow wp-block-paragraph">Twarz</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:heading {"textAlign":"center"} -->
 <h2 id="pielegnacja-twarzy" class="has-text-align-center wp-block-heading">Pielęgnacja twarzy</h2>
+<!-- /wp:heading -->
 
+<!-- wp:separator {"className":"bc-gold-rule"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity bc-gold-rule">
+<!-- /wp:separator -->
 
-
-<hr class="wp-block-separator has-alpha-channel-opacity bc-gold-rule"/>
-
-
-
-<!-- PLACEHOLDER opis — do podmiany przez klienta -->
+<!-- wp:paragraph {"className":"bc-offer-desc"} -->
 <p class="bc-offer-desc wp-block-paragraph">Twarz to wizytówka, dlatego każdą pielęgnację zaczynamy od rozmowy i analizy potrzeb skóry. Znajdziesz tu głębokie oczyszczanie wodorowe, peelingi chemiczne dobrane do kondycji cery, mikrodermabrazję oraz ekspresowe zabiegi bankietowe na ważne okazje. Pracujemy na sprawdzonych preparatach, dbając o komfort i bezpieczeństwo na każdym etapie. Celem jest zdrowa, wypoczęta i rozświetlona skóra — bez pośpiechu i bez kompromisów.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"bc-offer-price-note"} -->
 <p class="bc-offer-price-note wp-block-paragraph"><a href="/cennik/">Zabiegi od <strong>150 zł</strong> · <span class="bc-cennik-cta">pełny cennik</span></a></p>
+<!-- /wp:paragraph -->
 </div>
+<!-- /wp:column -->
 </div>
+<!-- /wp:columns -->
 
-
-
+<!-- wp:spacer {"height":"4rem"} -->
 <div style="height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
-
-
-<div class="wp-block-columns alignwide are-vertically-aligned-center is-layout-flex wp-container-core-columns-is-layout-86559df1 wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow">
+<!-- wp:columns {"align":"wide","verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"1.5rem","left":"3rem"}}}} -->
+<div class="wp-block-columns alignwide are-vertically-aligned-center">
+<!-- wp:column {"verticalAlignment":"center"} -->
+<div class="wp-block-column is-vertically-aligned-center">
+<!-- wp:paragraph {"textAlign":"center","className":"bc-eyebrow"} -->
 <p class="has-text-align-center bc-eyebrow wp-block-paragraph">Relaks</p>
+<!-- /wp:paragraph -->
 
+<!-- wp:heading {"textAlign":"center"} -->
+<h2 id="masaze-i-rytualy-spa" class="has-text-align-center wp-block-heading">Masaże i&nbsp;rytuały SPA</h2>
+<!-- /wp:heading -->
 
+<!-- wp:separator {"className":"bc-gold-rule"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity bc-gold-rule">
+<!-- /wp:separator -->
 
-<h2 id="masaze-i-rytualy-spa" class="has-text-align-center wp-block-heading">Masaże i rytuały SPA</h2>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity bc-gold-rule"/>
-
-
-
-<!-- PLACEHOLDER opis — do podmiany przez klienta -->
+<!-- wp:paragraph {"className":"bc-offer-desc"} -->
 <p class="bc-offer-desc wp-block-paragraph">To strefa, w której czas zwalnia. Proponujemy masaż relaksacyjny pleców na szybki reset, masaż całego ciała, masaż gorącymi kamieniami oraz autorskie rytuały SPA łączące peeling, masaż i maskę. Dobieramy techniki i intensywność do Twojego napięcia i samopoczucia. Wychodzisz lżejsza, rozluźniona i naprawdę wypoczęta.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"bc-offer-price-note"} -->
 <p class="bc-offer-price-note wp-block-paragraph"><a href="/cennik/">Zabiegi od <strong>120 zł</strong> · <span class="bc-cennik-cta">pełny cennik</span></a></p>
+<!-- /wp:paragraph -->
 </div>
+<!-- /wp:column -->
 
-
-
-<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:38%">
-<figure class="wp-block-image size-full bc-rounded"><img loading="lazy" decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/zabieg-masaz.jpg" alt="Masaż gorącymi kamieniami"/></figure>
+<!-- wp:column {"verticalAlignment":"center","width":"38%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:38%">
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"bc-rounded"} -->
+<figure class="wp-block-image size-full bc-rounded"><img src="/wp-content/themes/newskin-clinic/assets/images/zabieg-masaz.jpg" alt="Masaż gorącymi kamieniami"></figure>
+<!-- /wp:image -->
 </div>
+<!-- /wp:column -->
 </div>
+<!-- /wp:columns -->
 
-
-
+<!-- wp:spacer {"height":"4rem"} -->
 <div style="height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
-
-
-<div class="wp-block-columns alignwide are-vertically-aligned-center is-layout-flex wp-container-core-columns-is-layout-86559df1 wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:38%">
-<figure class="wp-block-image size-full bc-rounded"><img loading="lazy" decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/zabieg-manicure.jpg" alt="Manicure w salonie"/></figure>
+<!-- wp:columns {"align":"wide","verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"1.5rem","left":"3rem"}}}} -->
+<div class="wp-block-columns alignwide are-vertically-aligned-center">
+<!-- wp:column {"verticalAlignment":"center","width":"38%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:38%">
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"bc-rounded"} -->
+<figure class="wp-block-image size-full bc-rounded"><img src="/wp-content/themes/newskin-clinic/assets/images/zabieg-manicure.jpg" alt="Manicure w salonie"></figure>
+<!-- /wp:image -->
 </div>
+<!-- /wp:column -->
 
+<!-- wp:column {"verticalAlignment":"center"} -->
+<div class="wp-block-column is-vertically-aligned-center">
+<!-- wp:paragraph {"textAlign":"center","className":"bc-eyebrow"} -->
+<p class="has-text-align-center bc-eyebrow wp-block-paragraph">Dłonie i&nbsp;stopy</p>
+<!-- /wp:paragraph -->
 
+<!-- wp:heading {"textAlign":"center"} -->
+<h2 id="manicure-i-pedicure" class="has-text-align-center wp-block-heading">Manicure i&nbsp;pedicure</h2>
+<!-- /wp:heading -->
 
-<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow">
-<p class="has-text-align-center bc-eyebrow wp-block-paragraph">Dłonie i stopy</p>
+<!-- wp:separator {"className":"bc-gold-rule"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity bc-gold-rule">
+<!-- /wp:separator -->
 
-
-
-<h2 id="manicure-i-pedicure" class="has-text-align-center wp-block-heading">Manicure i pedicure</h2>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity bc-gold-rule"/>
-
-
-
-<!-- PLACEHOLDER opis — do podmiany przez klienta -->
+<!-- wp:paragraph {"className":"bc-offer-desc"} -->
 <p class="bc-offer-desc wp-block-paragraph">Dłonie i stopy mówią o nas tyle, co twarz — tutaj zyskują pełną opiekę. Oferujemy manicure hybrydowy o trwałym kolorze, delikatny manicure klasyczny, odżywczy manicure japoński oraz kompleksowy pedicure podologiczny. Każdy zabieg wykonujemy sterylnie, z dbałością o zdrowie i naturalny wygląd płytki. Wyjdziesz z poczuciem, że naprawdę o siebie zadbałaś.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"bc-offer-price-note"} -->
 <p class="bc-offer-price-note wp-block-paragraph"><a href="/cennik/">Zabiegi od <strong>80 zł</strong> · <span class="bc-cennik-cta">pełny cennik</span></a></p>
+<!-- /wp:paragraph -->
 </div>
+<!-- /wp:column -->
 </div>
+<!-- /wp:columns -->
 
-
-
+<!-- wp:spacer {"height":"4rem"} -->
 <div style="height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
-
-
-<div class="wp-block-columns alignwide are-vertically-aligned-center is-layout-flex wp-container-core-columns-is-layout-86559df1 wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow">
+<!-- wp:columns {"align":"wide","verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"1.5rem","left":"3rem"}}}} -->
+<div class="wp-block-columns alignwide are-vertically-aligned-center">
+<!-- wp:column {"verticalAlignment":"center"} -->
+<div class="wp-block-column is-vertically-aligned-center">
+<!-- wp:paragraph {"textAlign":"center","className":"bc-eyebrow"} -->
 <p class="has-text-align-center bc-eyebrow wp-block-paragraph">Ciało</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:heading {"textAlign":"center"} -->
 <h2 id="modelowanie-sylwetki" class="has-text-align-center wp-block-heading">Modelowanie sylwetki</h2>
+<!-- /wp:heading -->
 
+<!-- wp:separator {"className":"bc-gold-rule"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity bc-gold-rule">
+<!-- /wp:separator -->
 
-
-<hr class="wp-block-separator has-alpha-channel-opacity bc-gold-rule"/>
-
-
-
-<!-- PLACEHOLDER opis — do podmiany przez klienta -->
+<!-- wp:paragraph {"className":"bc-offer-desc"} -->
 <p class="bc-offer-desc wp-block-paragraph">Wspieramy jędrność skóry i smuklejszą sylwetkę nowoczesnymi, nieinwazyjnymi metodami. W ofercie są endermomasaż drenujący, fale radiowe RF zagęszczające skórę oraz aktywne zabiegi ujędrniające z masażem. Najlepsze efekty osiąga się serią, dlatego ułożymy plan dopasowany do Twoich celów. Pracujemy spokojnie, konsekwentnie i z troską o Twój komfort.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"bc-offer-price-note"} -->
 <p class="bc-offer-price-note wp-block-paragraph"><a href="/cennik/">Zabiegi od <strong>180 zł</strong> · <span class="bc-cennik-cta">pełny cennik</span></a></p>
+<!-- /wp:paragraph -->
 </div>
+<!-- /wp:column -->
 
-
-
-<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:38%">
-<figure class="wp-block-image size-full bc-rounded"><img loading="lazy" decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/zabieg-pielegnacja.jpg" alt="Naturalne maski pielęgnacyjne"/></figure>
+<!-- wp:column {"verticalAlignment":"center","width":"38%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:38%">
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"bc-rounded"} -->
+<figure class="wp-block-image size-full bc-rounded"><img src="/wp-content/themes/newskin-clinic/assets/images/zabieg-pielegnacja.jpg" alt="Naturalne maski pielęgnacyjne"></figure>
+<!-- /wp:image -->
 </div>
+<!-- /wp:column -->
 </div>
+<!-- /wp:columns -->
 
-
-
+<!-- wp:spacer {"height":"3rem"} -->
 <div style="height:3rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
+<!-- wp:paragraph {"textColor":"muted","textAlign":"center"} -->
+<p class="has-text-align-center has-muted-color has-text-color has-small-font-size wp-block-paragraph">Pełne zestawienie cen i&nbsp;pakietów znajdziesz w&nbsp;<a href="/cennik/">cenniku</a>.</p>
+<!-- /wp:paragraph -->
 
-
-<p class="has-text-align-center has-muted-color has-text-color has-small-font-size wp-block-paragraph">Pełne zestawienie cen i pakietów znajdziesz w <a href="/cennik/">cenniku</a>.</p>
-
-
-
-<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-20959078 wp-block-buttons-is-layout-flex">
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons">
+<!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/kontakt/">Umów wizytę</a></div>
+<!-- /wp:button -->
 </div>
+<!-- /wp:buttons -->
 </div>
-<!-- /wp:html -->]]></content:encoded>
+<!-- /wp:group -->
+]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>102</wp:post_id>
 		<wp:post_date><![CDATA[2026-06-17 10:00:00]]></wp:post_date>
@@ -316,20 +388,26 @@
 		<title>Cennik</title>
 		<link>https://newskin.local/cennik/</link>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<content:encoded><![CDATA[<!-- wp:html -->
-<div class="wp-block-group alignfull has-cream-background-color has-background has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><h1 class="has-text-align-center wp-block-post-title">Cennik</h1></div>
+		<content:encoded><![CDATA[
+<!-- wp:group {"align":"full","backgroundColor":"cream","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-cream-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+<!-- wp:heading {"textAlign":"center","level":1} -->
+<h1 class="wp-block-heading has-text-align-center wp-block-post-title">Cennik</h1>
+<!-- /wp:heading -->
+</div>
+<!-- /wp:group -->
 
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:paragraph {"textColor":"muted","textAlign":"center"} -->
+<p class="has-text-align-center has-muted-color has-text-color wp-block-paragraph">Ceny mają charakter orientacyjny. Ostateczny koszt potwierdzamy po krótkiej konsultacji, w&nbsp;zależności od potrzeb skóry i&nbsp;czasu zabiegu.</p>
+<!-- /wp:paragraph -->
 
-
-<div class="wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
-<p class="has-text-align-center has-muted-color has-text-color wp-block-paragraph">Ceny mają charakter orientacyjny. Ostateczny koszt potwierdzamy po krótkiej konsultacji, w zależności od potrzeb skóry i czasu zabiegu.</p>
-
-
-
+<!-- wp:spacer {"height":"1.5rem"} -->
 <div style="height:1.5rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
-
-
+<!-- wp:html -->
 <div class="bc-pricelist alignwide">
 <h2 class="has-text-align-center wp-block-heading">Pielęgnacja twarzy</h2>
 
@@ -346,7 +424,7 @@
 <li class="bc-menu-row"><span class="bc-menu-name">Masaż relaksacyjny pleców<span class="bc-menu-time">30 min</span></span><span class="bc-menu-price">120 zł</span></li>
 <li class="bc-menu-row"><span class="bc-menu-name">Masaż całego ciała<span class="bc-menu-time">60 min</span></span><span class="bc-menu-price">180 zł</span></li>
 <li class="bc-menu-row"><span class="bc-menu-name">Masaż gorącymi kamieniami<span class="bc-menu-time">75 min</span></span><span class="bc-menu-price">200 zł</span></li>
-<li class="bc-menu-row"><span class="bc-menu-name">Rytuał SPA „Złota chwila&#8221;<span class="bc-menu-time">90 min</span></span><span class="bc-menu-price">260 zł</span></li>
+<li class="bc-menu-row"><span class="bc-menu-name">Rytuał SPA „Złota chwila”<span class="bc-menu-time">90 min</span></span><span class="bc-menu-price">260 zł</span></li>
 </ul>
 
 <h2 class="has-text-align-center wp-block-heading">Manicure i pedicure</h2>
@@ -372,18 +450,22 @@
 
 <figure class="wp-block-table bc-price-table"><table class="has-fixed-layout"><thead><tr><th>Zabieg</th><th>1 zabieg</th><th>3 zabiegi</th><th>5 zabiegów</th></tr></thead><tbody><tr><td>Oczyszczanie wodorowe</td><td>180 zł</td><td>480 zł</td><td>750 zł</td></tr><tr><td>Endermomasaż</td><td>180 zł</td><td>480 zł</td><td>750 zł</td></tr><tr><td>Fale radiowe RF</td><td>220 zł</td><td>590 zł</td><td>920 zł</td></tr></tbody></table></figure>
 </div>
+<!-- /wp:html -->
 
-
-
+<!-- wp:spacer {"height":"1.5rem"} -->
 <div style="height:1.5rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
-
-
-<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-20959078 wp-block-buttons-is-layout-flex">
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons">
+<!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/kontakt/">Umów wizytę</a></div>
+<!-- /wp:button -->
 </div>
+<!-- /wp:buttons -->
 </div>
-<!-- /wp:html -->]]></content:encoded>
+<!-- /wp:group -->
+]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>103</wp:post_id>
 		<wp:post_date><![CDATA[2026-06-17 10:00:00]]></wp:post_date>
@@ -399,102 +481,117 @@
 		<title>Kontakt</title>
 		<link>https://newskin.local/kontakt/</link>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<content:encoded><![CDATA[<!-- wp:html -->
-<div class="wp-block-group alignfull has-cream-background-color has-background has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><h1 class="has-text-align-center wp-block-post-title">Kontakt</h1></div>
-
-
-
-<div class="wp-block-group alignfull has-global-padding is-layout-constrained wp-container-core-group-is-layout-f464533f wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
-<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-5fa88cab wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%">
-<p class="has-text-align-center bc-eyebrow wp-block-paragraph">Dane kontaktowe</p>
-
-
-
-<h2 class="has-text-align-center wp-block-heading has-x-large-font-size">Zapraszamy do salonu</h2>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity bc-gold-rule"/>
-
-
-
-<p class="wp-block-paragraph"><strong>NEW SKIN clinic</strong><br>ul. Przykładowa 1<br>00-001 Warszawa</p>
-
-
-
-<p class="wp-block-paragraph">Telefon: <a href="tel:+48123456789">+48 123 456 789</a><br>E-mail: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
-
-
-
-<h3 class="wp-block-heading has-large-font-size">Godziny otwarcia</h3>
-
-
-
-<p class="wp-block-paragraph">Poniedziałek–piątek: 9:00–20:00<br>Sobota: 9:00–14:00<br>Niedziela: nieczynne</p>
-
-
-
-<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Wizyty umawiamy telefonicznie lub przez formularz. Na wiadomości odpowiadamy w dni robocze do 24 godzin.</p>
+		<content:encoded><![CDATA[
+<!-- wp:group {"align":"full","backgroundColor":"cream","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-cream-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+<!-- wp:heading {"textAlign":"center","level":1} -->
+<h1 class="wp-block-heading has-text-align-center wp-block-post-title">Kontakt</h1>
+<!-- /wp:heading -->
 </div>
+<!-- /wp:group -->
 
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained","contentSize":"75rem"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"1.5rem","left":"4rem"}}}} -->
+<div class="wp-block-columns alignwide">
+<!-- wp:column {"width":"40%"} -->
+<div class="wp-block-column" style="flex-basis:40%">
+<!-- wp:paragraph {"textAlign":"center","className":"bc-eyebrow"} -->
+<p class="has-text-align-center bc-eyebrow wp-block-paragraph">Dane kontaktowe</p>
+<!-- /wp:paragraph -->
 
+<!-- wp:heading {"textAlign":"center"} -->
+<h2 class="has-text-align-center wp-block-heading has-x-large-font-size">Zapraszamy do salonu</h2>
+<!-- /wp:heading -->
 
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<!-- wp:separator {"className":"bc-gold-rule"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity bc-gold-rule">
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph"><strong>NEW SKIN clinic</strong><br>ul. Przykładowa 1<br>00-001 Warszawa</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">Telefon: <a href="tel:+48123456789">+48 123 456 789</a><br>E-mail: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading has-large-font-size">Godziny otwarcia</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">Poniedziałek–piątek: 9:00–20:00<br>Sobota: 9:00–14:00<br>Niedziela: nieczynne</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"textColor":"muted"} -->
+<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Wizyty umawiamy telefonicznie lub przez formularz. Na wiadomości odpowiadamy w&nbsp;dni robocze do 24 godzin.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:paragraph {"textAlign":"center","className":"bc-eyebrow"} -->
 <p class="has-text-align-center bc-eyebrow wp-block-paragraph">Formularz</p>
+<!-- /wp:paragraph -->
 
-
-
+<!-- wp:heading {"textAlign":"center"} -->
 <h2 class="has-text-align-center wp-block-heading has-x-large-font-size">Napisz do nas</h2>
+<!-- /wp:heading -->
 
+<!-- wp:separator {"className":"bc-gold-rule"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity bc-gold-rule">
+<!-- /wp:separator -->
 
-
-<hr class="wp-block-separator has-alpha-channel-opacity bc-gold-rule"/>
-
-
-
+<!-- wp:html -->
 <div class="wpcf7 no-js" id="wpcf7-f4-p10-o1" lang="pl-PL" dir="ltr" data-wpcf7-id="4">
 <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
 <form action="index.html#wpcf7-f4-p10-o1" method="post" class="wpcf7-form init" aria-label="Formularz kontaktowy" novalidate="novalidate" data-status="init">
-<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="4" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="pl_PL" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f4-p10-o1" /><input type="hidden" name="_wpcf7_container_post" value="10" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="4"><input type="hidden" name="_wpcf7_version" value="6.1.6"><input type="hidden" name="_wpcf7_locale" value="pl_PL"><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f4-p10-o1"><input type="hidden" name="_wpcf7_container_post" value="10"><input type="hidden" name="_wpcf7_posted_data_hash" value="">
 </fieldset>
-<p><label> Imię i nazwisko<br />
-<span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" autocomplete="name" aria-required="true" aria-invalid="false" value="" type="text" name="your-name" /></span> </label>
+<p><label> Imię i&nbsp;nazwisko<br>
+<span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" autocomplete="name" aria-required="true" aria-invalid="false" value="" type="text" name="your-name"></span> </label>
 </p>
-<p><label> Adres e-mail<br />
-<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-required="true" aria-invalid="false" value="" type="email" name="your-email" /></span> </label>
+<p><label> Adres e-mail<br>
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-required="true" aria-invalid="false" value="" type="email" name="your-email"></span> </label>
 </p>
-<p><label> Telefon (opcjonalnie)<br />
-<span class="wpcf7-form-control-wrap" data-name="your-phone"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-text wpcf7-validates-as-tel" autocomplete="tel" aria-invalid="false" value="" type="tel" name="your-phone" /></span> </label>
+<p><label> Telefon (opcjonalnie)<br>
+<span class="wpcf7-form-control-wrap" data-name="your-phone"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-text wpcf7-validates-as-tel" autocomplete="tel" aria-invalid="false" value="" type="tel" name="your-phone"></span> </label>
 </p>
-<p><label> Wiadomość<br />
+<p><label> Wiadomość<br>
 <span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="your-message"></textarea></span> </label>
 </p>
-<p><span class="wpcf7-form-control-wrap" data-name="rodo-zgoda"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="rodo-zgoda" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na zapytanie.</span></label></span></span></span>
+<p><span class="wpcf7-form-control-wrap" data-name="rodo-zgoda"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="rodo-zgoda" value="1" aria-invalid="false"><span class="wpcf7-list-item-label">Wyrażam zgodę na przetwarzanie moich danych osobowych w&nbsp;celu odpowiedzi na zapytanie.</span></label></span></span></span>
 </p>
-<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Wyślij wiadomość" />
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Wyślij wiadomość">
 </p><div class="wpcf7-response-output" aria-hidden="true"></div>
 </form>
 </div>
-
+<!-- /wp:html -->
 </div>
+<!-- /wp:column -->
 </div>
+<!-- /wp:columns -->
 
-
-
+<!-- wp:spacer {"height":"3rem"} -->
 <div style="height:3rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
-
-
-<div id="mapa" class="wp-block-group alignwide bc-map is-layout-flow wp-block-group-is-layout-flow">
+<!-- wp:group {"align":"wide","className":"bc-map","layout":{"type":"constrained"}} -->
+<div id="mapa" class="wp-block-group alignwide bc-map">
+<!-- wp:html -->
 <iframe src="https://maps.google.com/maps?q=Warszawa&amp;z=13&amp;output=embed" width="600" height="420" title="Mapa dojazdu do salonu NEW SKIN clinic (adres przykładowy)" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<!-- /wp:html -->
 </div>
+<!-- /wp:group -->
 
-
-
+<!-- wp:paragraph {"textColor":"muted","textAlign":"center"} -->
 <p class="has-text-align-center has-muted-color has-text-color has-x-small-font-size wp-block-paragraph">Mapa poglądowa — pinezkę ustawimy na docelowy adres salonu.</p>
+<!-- /wp:paragraph -->
 </div>
-<!-- /wp:html -->]]></content:encoded>
+<!-- /wp:group -->
+]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>104</wp:post_id>
 		<wp:post_date><![CDATA[2026-06-17 10:00:00]]></wp:post_date>
@@ -510,96 +607,127 @@
 		<title>Produkty</title>
 		<link>https://newskin.local/produkty/</link>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<content:encoded><![CDATA[<!-- wp:html -->
-<div class="wp-block-group alignfull has-cream-background-color has-background has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><h1 class="has-text-align-center wp-block-post-title">Produkty</h1></div>
+		<content:encoded><![CDATA[
+<!-- wp:group {"align":"full","backgroundColor":"cream","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-cream-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+<!-- wp:heading {"textAlign":"center","level":1} -->
+<h1 class="wp-block-heading has-text-align-center wp-block-post-title">Produkty</h1>
+<!-- /wp:heading -->
+</div>
+<!-- /wp:group -->
 
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained","contentSize":"75rem"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:paragraph {"textColor":"muted","textAlign":"center"} -->
+<p class="has-text-align-center has-muted-color has-text-color wp-block-paragraph">W&nbsp;salonie znajdziesz starannie wybrane kosmetyki, na których pracujemy podczas zabiegów. Pomożemy dobrać pielęgnację domową, która podtrzyma efekty wizyt.</p>
+<!-- /wp:paragraph -->
 
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","align":"wide","className":"bc-rounded"} -->
+<figure class="wp-block-image alignwide size-full bc-rounded"><img src="/wp-content/themes/newskin-clinic/assets/images/produkty.jpg" alt="Kosmetyki dostępne w salonie NEW SKIN clinic"></figure>
+<!-- /wp:image -->
 
-<div class="wp-block-group alignfull has-global-padding is-layout-constrained wp-container-core-group-is-layout-f464533f wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
-<p class="has-text-align-center has-muted-color has-text-color wp-block-paragraph">W salonie znajdziesz starannie wybrane kosmetyki, na których pracujemy podczas zabiegów. Pomożemy dobrać pielęgnację domową, która podtrzyma efekty wizyt.</p>
-
-
-
-<figure class="wp-block-image alignwide size-full bc-rounded"><img decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/produkty.jpg" alt="Kosmetyki dostępne w salonie NEW SKIN clinic"/></figure>
-
-
-
+<!-- wp:spacer {"height":"2.5rem"} -->
 <div style="height:2.5rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
+<!-- wp:columns {"align":"wide","className":"bc-product-grid"} -->
+<div class="wp-block-columns alignwide bc-product-grid">
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"1.5rem","right":"1.5rem","bottom":"2rem","left":"1.5rem"}}},"className":"bc-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group bc-card" style="padding-top:1.5rem;padding-right:1.5rem;padding-bottom:2rem;padding-left:1.5rem">
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="/wp-content/themes/newskin-clinic/assets/images/produkt-1.jpg" alt="Serum rewitalizujące z witaminą C"></figure>
+<!-- /wp:image -->
 
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading has-large-font-size">Serum rewitalizujące z&nbsp;witaminą C</h3>
+<!-- /wp:heading -->
 
-<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-f56f613f wp-block-columns-is-layout-flex bc-product-grid">
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-<div class="wp-block-group bc-card has-global-padding is-layout-constrained wp-container-core-group-is-layout-d918f3aa wp-block-group-is-layout-constrained" style="padding-top:1.5rem;padding-right:1.5rem;padding-bottom:2rem;padding-left:1.5rem">
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/produkt-1.jpg" alt="Serum rewitalizujące z witaminą C"/></figure>
+<!-- wp:paragraph {"textColor":"muted"} -->
+<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Rozświetla, wyrównuje koloryt i&nbsp;wspiera produkcję kolagenu. Idealne na dzień, pod krem z&nbsp;filtrem.</p>
+<!-- /wp:paragraph -->
 
-
-
-<h3 class="wp-block-heading has-large-font-size">Serum rewitalizujące z witaminą C</h3>
-
-
-
-<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Rozświetla, wyrównuje koloryt i wspiera produkcję kolagenu. Idealne na dzień, pod krem z filtrem.</p>
-
-
-
+<!-- wp:paragraph {"className":"bc-card-icon"} -->
 <p class="bc-card-icon wp-block-paragraph">149 zł</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"bc-product-more"} -->
 <p class="bc-product-more wp-block-paragraph"><a href="/produkt-serum-witamina-c/">Dowiedz się więcej →</a></p>
+<!-- /wp:paragraph -->
 </div>
+<!-- /wp:group -->
 </div>
+<!-- /wp:column -->
 
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"1.5rem","right":"1.5rem","bottom":"2rem","left":"1.5rem"}}},"className":"bc-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group bc-card" style="padding-top:1.5rem;padding-right:1.5rem;padding-bottom:2rem;padding-left:1.5rem">
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="/wp-content/themes/newskin-clinic/assets/images/produkt-2.jpg" alt="Krem odżywczy na noc"></figure>
+<!-- /wp:image -->
 
-
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-<div class="wp-block-group bc-card has-global-padding is-layout-constrained wp-container-core-group-is-layout-d918f3aa wp-block-group-is-layout-constrained" style="padding-top:1.5rem;padding-right:1.5rem;padding-bottom:2rem;padding-left:1.5rem">
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/produkt-2.jpg" alt="Krem odżywczy na noc"/></figure>
-
-
-
+<!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading has-large-font-size">Krem odżywczy na noc</h3>
+<!-- /wp:heading -->
 
+<!-- wp:paragraph {"textColor":"muted"} -->
+<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Bogata formuła z&nbsp;ceramidami regeneruje barierę hydrolipidową podczas snu. Dla skóry suchej i&nbsp;zmęczonej.</p>
+<!-- /wp:paragraph -->
 
-
-<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Bogata formuła z ceramidami regeneruje barierę hydrolipidową podczas snu. Dla skóry suchej i zmęczonej.</p>
-
-
-
+<!-- wp:paragraph {"className":"bc-card-icon"} -->
 <p class="bc-card-icon wp-block-paragraph">129 zł</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"bc-product-more"} -->
 <p class="bc-product-more wp-block-paragraph"><a href="/produkt-krem-na-noc/">Dowiedz się więcej →</a></p>
+<!-- /wp:paragraph -->
 </div>
+<!-- /wp:group -->
 </div>
+<!-- /wp:column -->
 
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"1.5rem","right":"1.5rem","bottom":"2rem","left":"1.5rem"}}},"className":"bc-card","layout":{"type":"constrained"}} -->
+<div class="wp-block-group bc-card" style="padding-top:1.5rem;padding-right:1.5rem;padding-bottom:2rem;padding-left:1.5rem">
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="/wp-content/themes/newskin-clinic/assets/images/produkt-3.jpg" alt="Olejek różany do twarzy"></figure>
+<!-- /wp:image -->
 
-
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-<div class="wp-block-group bc-card has-global-padding is-layout-constrained wp-container-core-group-is-layout-d918f3aa wp-block-group-is-layout-constrained" style="padding-top:1.5rem;padding-right:1.5rem;padding-bottom:2rem;padding-left:1.5rem">
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/produkt-3.jpg" alt="Olejek różany do twarzy"/></figure>
-
-
-
+<!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading has-large-font-size">Olejek różany do twarzy</h3>
+<!-- /wp:heading -->
 
+<!-- wp:paragraph {"textColor":"muted"} -->
+<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Naturalny olejek z&nbsp;dzikiej róży, który koi, wygładza i&nbsp;przywraca skórze zdrowy blask. Kilka kropli wystarczy.</p>
+<!-- /wp:paragraph -->
 
-
-<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">Naturalny olejek z dzikiej róży, który koi, wygładza i przywraca skórze zdrowy blask. Kilka kropli wystarczy.</p>
-
-
-
+<!-- wp:paragraph {"className":"bc-card-icon"} -->
 <p class="bc-card-icon wp-block-paragraph">99 zł</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"bc-product-more"} -->
 <p class="bc-product-more wp-block-paragraph"><a href="/produkt-olejek-rozany/">Dowiedz się więcej →</a></p>
+<!-- /wp:paragraph -->
 </div>
+<!-- /wp:group -->
 </div>
+<!-- /wp:column -->
 </div>
+<!-- /wp:columns -->
 
-
-
+<!-- wp:spacer {"height":"2rem"} -->
 <div style="height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
-
-
-<p class="has-text-align-center has-muted-color has-text-color has-small-font-size wp-block-paragraph">Produkty kupisz stacjonarnie w salonie. Zapytaj o nie podczas wizyty. Ceny mogą ulec zmianie.</p>
+<!-- wp:paragraph {"textColor":"muted","textAlign":"center"} -->
+<p class="has-text-align-center has-muted-color has-text-color has-small-font-size wp-block-paragraph">Produkty kupisz stacjonarnie w&nbsp;salonie. Zapytaj o&nbsp;nie podczas wizyty. Ceny mogą ulec zmianie.</p>
+<!-- /wp:paragraph -->
 </div>
-<!-- /wp:html -->]]></content:encoded>
+<!-- /wp:group -->
+]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>105</wp:post_id>
 		<wp:post_date><![CDATA[2026-06-17 10:00:00]]></wp:post_date>
@@ -615,24 +743,55 @@
 		<title>Serum z witaminą C</title>
 		<link>https://newskin.local/produkt-serum-witamina-c/</link>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<content:encoded><![CDATA[<!-- wp:html -->
-<div class="wp-block-group alignfull has-cream-background-color has-background has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><h1 class="has-text-align-center wp-block-post-title">Serum rewitalizujące z witaminą C</h1></div>
-
-
-
-<div class="wp-block-columns alignwide is-layout-flex wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-<figure class="wp-block-image size-full bc-rounded bc-product-photo"><img decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/produkt-1.jpg" alt="Serum rewitalizujące z witaminą C"/></figure>
+		<content:encoded><![CDATA[
+<!-- wp:group {"align":"full","backgroundColor":"cream","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-cream-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+<!-- wp:heading {"textAlign":"center","level":1} -->
+<h1 class="wp-block-heading has-text-align-center wp-block-post-title">Serum rewitalizujące z witaminą C</h1>
+<!-- /wp:heading -->
 </div>
-<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow">
+<!-- /wp:group -->
+
+<!-- wp:columns {"align":"wide"} -->
+<div class="wp-block-columns alignwide">
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"bc-rounded bc-product-photo"} -->
+<figure class="wp-block-image size-full bc-rounded bc-product-photo"><img src="/wp-content/themes/newskin-clinic/assets/images/produkt-1.jpg" alt="Serum rewitalizujące z witaminą C"></figure>
+<!-- /wp:image -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"center"} -->
+<div class="wp-block-column is-vertically-aligned-center">
+<!-- wp:paragraph {"className":"bc-card-icon"} -->
 <p class="bc-card-icon wp-block-paragraph">149 zł</p>
-<!-- PLACEHOLDER opis — do podmiany przez klienta -->
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
 <p class="wp-block-paragraph">Rozświetlające serum ze stabilizowaną witaminą C, które wyrównuje koloryt i przywraca skórze zdrowy blask. Lekka formuła szybko się wchłania, wspierając cerę zmęczoną i pozbawioną energii.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"textColor":"muted"} -->
 <p class="has-muted-color has-text-color wp-block-paragraph">Stosuj rano na oczyszczoną skórę, przed kremem nawilżającym i ochroną SPF. Świetnie sprawdza się jako baza pod makijaż i element pielęgnacji antyoksydacyjnej.</p>
-<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex"><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/kontakt/">Zapytaj o produkt</a></div><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/produkty/">Wróć do produktów</a></div></div>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/kontakt/">Zapytaj o produkt</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/produkty/">Wróć do produktów</a></div>
+<!-- /wp:button -->
 </div>
+<!-- /wp:buttons -->
 </div>
-<!-- /wp:html -->]]></content:encoded>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>106</wp:post_id>
 		<wp:post_date><![CDATA[2026-06-17 10:00:00]]></wp:post_date>
@@ -648,24 +807,55 @@
 		<title>Krem na noc</title>
 		<link>https://newskin.local/produkt-krem-na-noc/</link>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<content:encoded><![CDATA[<!-- wp:html -->
-<div class="wp-block-group alignfull has-cream-background-color has-background has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><h1 class="has-text-align-center wp-block-post-title">Krem odżywczy na noc</h1></div>
-
-
-
-<div class="wp-block-columns alignwide is-layout-flex wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-<figure class="wp-block-image size-full bc-rounded bc-product-photo"><img decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/produkt-2.jpg" alt="Krem odżywczy na noc"/></figure>
+		<content:encoded><![CDATA[
+<!-- wp:group {"align":"full","backgroundColor":"cream","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-cream-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+<!-- wp:heading {"textAlign":"center","level":1} -->
+<h1 class="wp-block-heading has-text-align-center wp-block-post-title">Krem odżywczy na noc</h1>
+<!-- /wp:heading -->
 </div>
-<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow">
+<!-- /wp:group -->
+
+<!-- wp:columns {"align":"wide"} -->
+<div class="wp-block-columns alignwide">
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"bc-rounded bc-product-photo"} -->
+<figure class="wp-block-image size-full bc-rounded bc-product-photo"><img src="/wp-content/themes/newskin-clinic/assets/images/produkt-2.jpg" alt="Krem odżywczy na noc"></figure>
+<!-- /wp:image -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"center"} -->
+<div class="wp-block-column is-vertically-aligned-center">
+<!-- wp:paragraph {"className":"bc-card-icon"} -->
 <p class="bc-card-icon wp-block-paragraph">129 zł</p>
-<!-- PLACEHOLDER opis — do podmiany przez klienta -->
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
 <p class="wp-block-paragraph">Bogaty krem na noc z ceramidami, który wspiera regenerację skóry podczas snu i odbudowę bariery hydrolipidowej. Cera sucha i zmęczona odzyskuje komfort, miękkość i nawilżenie.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"textColor":"muted"} -->
 <p class="has-muted-color has-text-color wp-block-paragraph">Nakładaj wieczorem na oczyszczoną twarz i szyję jako ostatni krok pielęgnacji. Polecany szczególnie w sezonie grzewczym i dla skóry odwodnionej.</p>
-<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex"><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/kontakt/">Zapytaj o produkt</a></div><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/produkty/">Wróć do produktów</a></div></div>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/kontakt/">Zapytaj o produkt</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/produkty/">Wróć do produktów</a></div>
+<!-- /wp:button -->
 </div>
+<!-- /wp:buttons -->
 </div>
-<!-- /wp:html -->]]></content:encoded>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>107</wp:post_id>
 		<wp:post_date><![CDATA[2026-06-17 10:00:00]]></wp:post_date>
@@ -681,24 +871,55 @@
 		<title>Olejek różany</title>
 		<link>https://newskin.local/produkt-olejek-rozany/</link>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<content:encoded><![CDATA[<!-- wp:html -->
-<div class="wp-block-group alignfull has-cream-background-color has-background has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><h1 class="has-text-align-center wp-block-post-title">Olejek różany do twarzy</h1></div>
-
-
-
-<div class="wp-block-columns alignwide is-layout-flex wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-<figure class="wp-block-image size-full bc-rounded bc-product-photo"><img decoding="async" src="/wp-content/themes/newskin-clinic/assets/images/produkt-3.jpg" alt="Olejek różany do twarzy"/></figure>
+		<content:encoded><![CDATA[
+<!-- wp:group {"align":"full","backgroundColor":"cream","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-cream-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+<!-- wp:heading {"textAlign":"center","level":1} -->
+<h1 class="wp-block-heading has-text-align-center wp-block-post-title">Olejek różany do twarzy</h1>
+<!-- /wp:heading -->
 </div>
-<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow">
+<!-- /wp:group -->
+
+<!-- wp:columns {"align":"wide"} -->
+<div class="wp-block-columns alignwide">
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"bc-rounded bc-product-photo"} -->
+<figure class="wp-block-image size-full bc-rounded bc-product-photo"><img src="/wp-content/themes/newskin-clinic/assets/images/produkt-3.jpg" alt="Olejek różany do twarzy"></figure>
+<!-- /wp:image -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"center"} -->
+<div class="wp-block-column is-vertically-aligned-center">
+<!-- wp:paragraph {"className":"bc-card-icon"} -->
 <p class="bc-card-icon wp-block-paragraph">99 zł</p>
-<!-- PLACEHOLDER opis — do podmiany przez klienta -->
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
 <p class="wp-block-paragraph">Naturalny olejek z dzikiej róży, który koi, wygładza i przywraca skórze elastyczność. Bogaty w kwasy tłuszczowe, odżywia i pomaga ujednolicić koloryt — wystarczy kilka kropli.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"textColor":"muted"} -->
 <p class="has-muted-color has-text-color wp-block-paragraph">Wmasuj wieczorem w skórę twarzy lub dodaj kilka kropli do kremu na noc. Sprawdza się także w pielęgnacji skóry suchej i wymagającej regeneracji.</p>
-<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex"><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/kontakt/">Zapytaj o produkt</a></div><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/produkty/">Wróć do produktów</a></div></div>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/kontakt/">Zapytaj o produkt</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/produkty/">Wróć do produktów</a></div>
+<!-- /wp:button -->
 </div>
+<!-- /wp:buttons -->
 </div>
-<!-- /wp:html -->]]></content:encoded>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>108</wp:post_id>
 		<wp:post_date><![CDATA[2026-06-17 10:00:00]]></wp:post_date>
@@ -714,55 +935,63 @@
 		<title>Polityka prywatności</title>
 		<link>https://newskin.local/polityka-prywatnosci/</link>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<content:encoded><![CDATA[<!-- wp:html -->
-<div class="wp-block-group alignfull has-cream-background-color has-background has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><h1 class="has-text-align-center wp-block-post-title">Polityka prywatności</h1></div>
-
-
-
-<div class="wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
-<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">UWAGA: To jest szablon do uzupełnienia. Przed publikacją strony uzupełnij dane administratora danych i skonsultuj treść z osobą odpowiedzialną za RODO.</p>
-
-
-
-<h2 class="wp-block-heading has-x-large-font-size">1. Administrator danych</h2>
-
-
-
-<p class="wp-block-paragraph">Administratorem danych osobowych jest NEW SKIN clinic z siedzibą przy ul. Przykładowej 1, 00-001 Warszawa (NIP: 000-000-00-00). Kontakt: kontakt@example.com.</p>
-
-
-
-<h2 class="wp-block-heading has-x-large-font-size">2. Jakie dane przetwarzamy i po co</h2>
-
-
-
-<p class="wp-block-paragraph">Dane przekazane w formularzu kontaktowym (imię i nazwisko, adres e-mail, numer telefonu, treść wiadomości) przetwarzamy wyłącznie w celu odpowiedzi na zapytanie oraz umówienia wizyty, na podstawie art. 6 ust. 1 lit. b i f RODO.</p>
-
-
-
-<h2 class="wp-block-heading has-x-large-font-size">3. Jak długo przechowujemy dane</h2>
-
-
-
-<p class="wp-block-paragraph">Dane z korespondencji przechowujemy przez okres niezbędny do obsługi zapytania, nie dłużej niż 12 miesięcy od ostatniego kontaktu.</p>
-
-
-
-<h2 class="wp-block-heading has-x-large-font-size">4. Twoje prawa</h2>
-
-
-
-<p class="wp-block-paragraph">Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych. W sprawach danych osobowych napisz na adres: kontakt@example.com.</p>
-
-
-
-<h2 class="wp-block-heading has-x-large-font-size">5. Pliki cookie</h2>
-
-
-
-<p class="wp-block-paragraph">Strona korzysta wyłącznie z niezbędnych plików cookie wymaganych do jej prawidłowego działania. Nie używamy cookie marketingowych ani analitycznych. (Zaktualizuj ten punkt, jeśli dodasz narzędzia analityczne.)</p>
+		<content:encoded><![CDATA[
+<!-- wp:group {"align":"full","backgroundColor":"cream","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-cream-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+<!-- wp:heading {"textAlign":"center","level":1} -->
+<h1 class="wp-block-heading has-text-align-center wp-block-post-title">Polityka prywatności</h1>
+<!-- /wp:heading -->
 </div>
-<!-- /wp:html -->]]></content:encoded>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:paragraph {"textColor":"muted"} -->
+<p class="has-muted-color has-text-color has-small-font-size wp-block-paragraph">UWAGA: To jest szablon do uzupełnienia. Przed publikacją strony uzupełnij dane administratora danych i&nbsp;skonsultuj treść z&nbsp;osobą odpowiedzialną za RODO.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading has-x-large-font-size">1. Administrator danych</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">Administratorem danych osobowych jest NEW SKIN clinic z&nbsp;siedzibą przy ul. Przykładowej 1, 00-001 Warszawa (NIP: 000-000-00-00). Kontakt: kontakt@example.com.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading has-x-large-font-size">2. Jakie dane przetwarzamy i&nbsp;po co</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">Dane przekazane w&nbsp;formularzu kontaktowym (imię i&nbsp;nazwisko, adres e-mail, numer telefonu, treść wiadomości) przetwarzamy wyłącznie w&nbsp;celu odpowiedzi na zapytanie oraz umówienia wizyty, na podstawie art. 6 ust. 1 lit. b i&nbsp;f RODO.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading has-x-large-font-size">3. Jak długo przechowujemy dane</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">Dane z&nbsp;korespondencji przechowujemy przez okres niezbędny do obsługi zapytania, nie dłużej niż 12 miesięcy od ostatniego kontaktu.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading has-x-large-font-size">4. Twoje prawa</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych. W&nbsp;sprawach danych osobowych napisz na adres: kontakt@example.com.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading has-x-large-font-size">5. Pliki cookie</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p class="wp-block-paragraph">Strona korzysta wyłącznie z&nbsp;niezbędnych plików cookie wymaganych do jej prawidłowego działania. Nie używamy cookie marketingowych ani analitycznych. (Zaktualizuj ten punkt, jeśli dodasz narzędzia analityczne.)</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>109</wp:post_id>
 		<wp:post_date><![CDATA[2026-06-17 10:00:00]]></wp:post_date>

@@ -16,8 +16,11 @@
 		return;
 	}
 
+	// Podstrony owijają treść w .wp-block-post-content; strona główna (front-page.html) w
+	// <main class="wp-block-group"> — łapiemy oba, inaczej hero/sekcje na home nie dostają reveal.
 	var sections = document.querySelectorAll(
-		'.wp-block-post-content > .wp-block-group, .wp-block-post-content > .wp-block-cover'
+		'.wp-block-post-content > .wp-block-group, .wp-block-post-content > .wp-block-cover, ' +
+		'main.wp-block-group > .wp-block-group, main.wp-block-group > .wp-block-cover'
 	);
 
 	if ( ! sections.length ) {
