@@ -36,6 +36,7 @@ Gotowe. Strona główna działa od razu (jest wbudowana w motyw). Reszta jest w 
 - Zmiana **układu** — przeciągaj/dodawaj bloki w edytorze albo w *Widoku listy* (ikona drzewka w lewym górnym pasku — pokazuje całą strukturę strony).
 - **Zdjęcia:** kliknij blok obrazka → *Zastąp* → wgraj nowe lub wybierz z *Mediów*.
 - **Strona główna** edytuje się w: Wygląd → *Edytor* → Szablony → *Strona główna* (też natywne bloki).
+- **Nagłówek i stopka** (logo, menu, „Umów wizytę", dane kontaktowe, godziny): Wygląd → *Edytor* → *Wzorce* → *Części szablonu* → *Nagłówek* / *Stopka*. Menu to blok **Nawigacja** — dodajesz/usuwasz pozycje klikając „+". Logo i dane edytujesz jak zwykłe bloki.
 
 > **Dwa wyjątki** (zostały jako pojedynczy blok „HTML własny", bo to niestandardowe komponenty): **cennik** (lista cen — edytujesz ceny w tym jednym bloku jako HTML) i **formularz na Kontakcie**. Formularz docelowo wstaw natywnie wtyczką Contact Form 7 (shortcode) — patrz krok 2 instalacji; obecny to placeholder wyglądu.
 

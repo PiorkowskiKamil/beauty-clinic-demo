@@ -1551,9 +1551,10 @@ body.bc-cb-lock {
   --wp--preset--color--secondary: #6f9c8b;      /* mięta stonowana — rola: akcent + hover */
 }
 
-/* Logo w headerze (zastępuje tekst marki) — bez sizingu renderowałoby się w pełnym rozmiarze */
-.bc-logo { height: 2.75rem; width: auto; display: block; }
-@media (max-width: 600px) { .bc-logo { height: 2.4rem; } }
+/* Logo w headerze (blok core/image z klasą bc-site-brand na <figure>; sizing celuje w <img>) */
+.bc-site-brand { margin: 0; }
+.bc-site-brand img { height: 2.75rem; width: auto; display: block; }
+@media (max-width: 600px) { .bc-site-brand img { height: 2.4rem; } }
 
 /* HOVER = MIĘTA. Złoto prowadzi statycznie; mięta to język interakcji (baza hover'owała w złoto). */
 .bc-site-brand a:hover,
@@ -1662,8 +1663,9 @@ body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation a:focus,
 .bc-product-grid .bc-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(34, 31, 26, 0.10); }
 .bc-product-grid .bc-product-more a::after { content: ""; position: absolute; inset: 0; }
 @media (prefers-reduced-motion: reduce) { .bc-product-grid .bc-card:hover { transform: none; } }
-/* Logo w stopce (zamiast tekstu „NEW SKIN clinic") */
-.bc-footer-logo { height: 3rem; width: auto; display: block; }
+/* Logo w stopce (blok core/image z klasą bc-footer-logo na <figure>; sizing celuje w <img>) */
+.bc-footer-logo { margin: 0; }
+.bc-footer-logo img { height: 3rem; width: auto; display: block; }
 /* Produkty: link „Dowiedz się więcej" → kotwica w Ofercie */
 .bc-product-more { margin-top: 0.75rem; }
 .bc-product-more a { color: var(--wp--preset--color--primary); font-weight: 700; text-decoration: none; }
