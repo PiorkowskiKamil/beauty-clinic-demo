@@ -1,0 +1,1672 @@
+/*
+ * Beauty Clinic — style uzupełniające theme.json.
+ * Design tokens (kolory, fonty, spacing) pochodzą z theme.json;
+ * tutaj tylko to, czego theme.json nie potrafi wyrazić.
+ */
+
+/* ---------- Detale firmowe: nadtytuł i złota linia ---------- */
+
+/* Nadtytuł sekcji (eyebrow): mały, rozstrzelony, wersaliki, ciemne złoto */
+.bc-eyebrow {
+	font-family: var(--wp--preset--font-family--body);
+	font-size: var(--wp--preset--font-size--x-small);
+	font-weight: 700;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	/* złoto marki #daa520 — spójny złoty wszędzie (decyzja klienta).
+	   UWAGA: na kremie ~2:1, poniżej AA dla małego tekstu. */
+	color: var(--wp--preset--color--primary);
+}
+
+/* Linia pod nagłówkiem sekcji: hairline przez całą szerokość,
+   ten sam język co nagłówki kategorii cennika */
+.bc-gold-rule {
+	width: 100% !important;
+	height: 1px;
+	background-color: var(--wp--preset--color--sand);
+	border: none;
+	margin-top: 0.85rem;
+	margin-left: 0;
+	margin-right: auto;
+}
+
+/* ---------- Nagłówek strony (sticky) ---------- */
+
+.bc-site-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background: var(--wp--preset--color--base);
+	border-bottom: 1px solid var(--wp--preset--color--sand);
+}
+
+/* .bc-site-header jest opakowany w <header class="wp-block-template-part">, który
+   ma wysokość SAMEGO nagłówka — przez to sticky na .bc-site-header nie miał się
+   gdzie przykleić (rodzic znika po ~78px scrolla i nagłówek odjeżdża). Sticky
+   musi siedzieć na opakowaniu, które jest dzieckiem wysokiego .wp-site-blocks.
+   Strona główna używa fixed (kinowy overlay na hero), więc ją pomijamy. */
+body:not(.home) header.wp-block-template-part {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+/* Zdjęcia sekcji na stronie Oferta (zigzag 2-kol, lazy-load) nie miały rezerwacji
+   wysokości — figura zwijała się do ~29px zanim lazy-load wczytał obraz, więc
+   zdjęcie wyglądało na brakujące. Rezerwujemy proporcje 4:3 (pliki 900×600), by
+   miejsce było trzymane i obraz wczytał się płynnie. Selektor celuje wyłącznie w
+   zdjęcia sekcji oferty: home „O nas" ma .bc-fill-img, zdjęcia zespołu .bc-portrait. */
+figure.wp-block-image.bc-rounded:not(.bc-fill-img):not(.bc-portrait):not(.bc-product-photo):not(.alignwide) img {
+	aspect-ratio: 4 / 3; /* R10: oferta — zdjęcie wyższe niż kolumna tekstu (alignwide=baner produktów trzyma 21/9) */
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+/* Zdjęcie produktu na podstronie: pełny produkt w naturalnych proporcjach,
+   bez kadrowania 3:2 jak banery oferty (R7 — user: „ucina zdjęcie"). */
+figure.wp-block-image.bc-product-photo img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: auto;
+	object-fit: contain;
+}
+
+/* Nazwa salonu w nagłówku — serif, bez podkreślenia */
+.bc-site-brand a {
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+	letter-spacing: 0.01em;
+}
+
+.bc-site-brand a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+/* Linki nawigacji: spokojny hover w złoto */
+.bc-site-header .wp-block-navigation a:hover,
+.bc-site-header .wp-block-navigation a:focus {
+	color: var(--wp--preset--color--primary);
+	text-decoration: none;
+}
+
+/* ---------- Karty (oferta, dlaczego my, produkty, zespół) ---------- */
+
+.bc-card {
+	background: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--sand);
+	border-radius: 6px;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.bc-card:hover {
+	transform: translateY(-3px);
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 12px 32px rgba(34, 31, 26, 0.08);
+}
+
+/* Numer / cena / statystyka — złoto marki #daa520 (spójność, decyzja klienta).
+   UWAGA: ~2:1 na bieli, poniżej AA. */
+.bc-card-icon {
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: 1.75rem;
+	color: var(--wp--preset--color--primary);
+	line-height: 1;
+}
+
+/* Statystyki w sekcji „O nas" wyśrodkowane — spójnie z wyśrodkowanymi
+   nagłówkami sekcji w całym serwisie (każda liczba nad swoją etykietą).
+   :has celuje wyłącznie w wiersz statystyk (bezpośrednie dziecko .bc-stat). */
+.wp-block-columns:has(> .wp-block-column > .bc-card-icon.bc-stat) {
+	text-align: center;
+}
+
+/* ---------- Opinie klientek ---------- */
+
+/* Kremowe tło i ozdobny cudzysłów odróżniają opinie od kart wyróżników
+   (bez kolorowego paska na krawędzi — anty-wzorzec border-accent) */
+.bc-testimonial {
+	background: var(--wp--preset--color--cream);
+	border: 1px solid var(--wp--preset--color--sand);
+	border-radius: 6px;
+	position: relative;
+}
+
+/* Duży ozdobny cudzysłów */
+.bc-testimonial::before {
+	content: "\201D";
+	position: absolute;
+	top: 0.25rem;
+	right: 1.25rem;
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: 4rem;
+	line-height: 1;
+	color: var(--wp--preset--color--primary);
+	opacity: 0.35;
+}
+
+/* Gwiazdki ocen */
+.bc-stars {
+	color: var(--wp--preset--color--primary);
+	letter-spacing: 0.15em;
+}
+
+/* ---------- Tabele cennika ---------- */
+
+.bc-price-table table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.bc-price-table th {
+	font-family: var(--wp--preset--font-family--body);
+	font-size: var(--wp--preset--font-size--x-small);
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--muted);
+	text-align: left;
+	border-bottom: 2px solid var(--wp--preset--color--primary);
+	padding: 0.75rem 0.5rem;
+}
+
+.bc-price-table td {
+	border-bottom: 1px solid var(--wp--preset--color--sand);
+	padding: 0.85rem 0.5rem;
+	vertical-align: top;
+}
+
+.bc-price-table td:last-child,
+.bc-price-table th:last-child {
+	text-align: right;
+	white-space: nowrap;
+}
+
+/* Lista cen "nazwa ..... cena": opis płynie za nazwą, cena dobita do prawej */
+.bc-price-row {
+	display: flex;
+	gap: 0.4rem;
+	border-bottom: 1px solid var(--wp--preset--color--sand);
+	padding: 0.85rem 0.25rem;
+	margin: 0;
+}
+
+.bc-price-row strong:last-child {
+	margin-left: auto;
+	padding-left: 1rem;
+	white-space: nowrap;
+	color: var(--wp--preset--color--primary);
+}
+
+/* ---------- Formularz kontaktowy (Contact Form 7) ---------- */
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="tel"],
+.wpcf7 textarea {
+	width: 100%;
+	border: 1px solid var(--wp--preset--color--sand);
+	border-radius: 4px;
+	padding: 0.85rem 1rem;
+	font-family: var(--wp--preset--font-family--body);
+	font-size: var(--wp--preset--font-size--medium);
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+}
+
+.wpcf7 input:focus,
+.wpcf7 textarea:focus {
+	outline: 2px solid var(--wp--preset--color--primary);
+	outline-offset: 1px;
+	border-color: var(--wp--preset--color--primary);
+}
+
+.wpcf7 label {
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	display: block;
+	margin-bottom: 1rem;
+}
+
+.wpcf7 input[type="submit"] {
+	background: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--contrast);
+	border: none;
+	border-radius: 10px;
+	padding: 0.85rem 2.5rem;
+	font-family: var(--wp--preset--font-family--body);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	cursor: pointer;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+.wpcf7 input[type="submit"]:hover,
+.wpcf7 input[type="submit"]:focus {
+	background: var(--wp--preset--color--primary-dark);
+	color: var(--wp--preset--color--base);
+}
+
+/* ---------- Dostępność i drobiazgi ---------- */
+
+/* Wyraźny fokus klawiatury w kolorze marki */
+:where(a, button, summary, input, textarea):focus-visible {
+	outline: 2px solid var(--wp--preset--color--primary-dark);
+	outline-offset: 2px;
+}
+
+/* Płynne przewijanie do kotwic (np. przycisk "Zobacz ofertę" na hero) */
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.bc-card,
+	.bc-card:hover {
+		transition: none;
+		transform: none;
+	}
+}
+
+/* Zdjęcia w kartach — delikatne zaokrąglenie */
+.bc-card img,
+.bc-rounded img {
+	border-radius: 6px;
+}
+
+/* Stopka: cienka złota linia odcina ją od sekcji powyżej (np. ciemnego CTA) */
+.bc-site-footer {
+	border-top: 1px solid rgba(197, 165, 114, 0.4);
+}
+
+/* Stopka: stonowane linki — bez podkreślenia, podświetlenie przez fade.
+   Kolor ink (--contrast): stopka jest kremowa; --base (białe) z ciemnej stopki było niewidoczne. */
+.bc-site-footer a {
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+	transition: color 0.25s ease;
+}
+
+.bc-site-footer a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+/* Lista w stopce bez punktorów */
+.bc-site-footer ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+/* ---------- Korekty responsywne ---------- */
+
+/* Nazwa salonu zawsze w jednej linii; mniejsza na wąskich ekranach */
+.bc-site-brand a {
+	white-space: nowrap;
+}
+
+@media (max-width: 781px) {
+	.bc-site-brand a {
+		font-size: 1.2rem;
+	}
+}
+
+/* Tabele cennika: automatyczna szerokość kolumn (nazwa zabiegu dostaje
+   więcej miejsca niż kolumny czasu/ceny) */
+.bc-price-table .has-fixed-layout {
+	table-layout: auto;
+}
+
+/* Przyciski nigdy nie łamią tekstu */
+.wp-block-button__link {
+	white-space: nowrap;
+}
+
+/* Mniejszy przycisk CTA w nagłówku na wąskich ekranach */
+@media (max-width: 781px) {
+	.bc-header-cta .wp-block-button__link {
+		padding: 0.6rem 1.25rem;
+		font-size: var(--wp--preset--font-size--x-small);
+	}
+}
+
+/* Nagłówki kolumn tabel cennika bez łamania */
+.bc-price-table th {
+	white-space: nowrap;
+}
+
+/* Nadtytuły w stopce: jasne złoto na ciemnym tle (kontrast WCAG AA) */
+.bc-site-footer .bc-eyebrow {
+	color: var(--wp--preset--color--primary);
+}
+
+/* Jednolite proporcje zdjęć: portrety zespołu i zdjęcia w kartach */
+.bc-portrait img {
+	aspect-ratio: 4 / 5;
+	width: 100%;
+	object-fit: cover;
+}
+
+.bc-card .wp-block-image img {
+	aspect-ratio: 1 / 1;
+	width: 100%;
+	object-fit: cover;
+}
+
+/* Szerokie banery zdjęciowe: kadr panoramiczny zamiast pełnej wysokości */
+.wp-block-image.alignwide.bc-rounded img {
+	aspect-ratio: 21 / 9;
+	width: 100%;
+	object-fit: cover;
+}
+
+/* Przyciski konturowe (na ciemnych sekcjach): hover w złoto szampańskie */
+.is-style-outline .wp-block-button__link:hover,
+.is-style-outline .wp-block-button__link:focus {
+	background: transparent;
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--primary);
+}
+
+/* ---------- Poprawki układu wg feedbacku klienta ---------- */
+
+/* Karty wyróżników i opinii: zawsze równa wysokość w wierszu */
+.bc-card,
+.bc-testimonial {
+	height: 100%;
+}
+
+/* Zdjęcie wypełniające całą wysokość sekcji (O nas) */
+.bc-fill-img {
+	height: 100%;
+	margin: 0;
+}
+
+.bc-fill-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Na mobile (kolumny ułożone w pionie) zdjęcie wraca do stałych proporcji */
+@media (max-width: 781px) {
+	.bc-fill-img img {
+		height: auto;
+		aspect-ratio: 4 / 5;
+	}
+}
+
+/* Kolorowane fragmenty nagłówków: bez domyślnego żółtego tła <mark> */
+mark.has-inline-color {
+	background-color: transparent;
+}
+
+/* Bez odstępów między głównymi blokami strony: nagłówek, sekcje i stopka
+   stykają się ze sobą (sekcje niosą własny padding) */
+body .wp-site-blocks > * + *,
+main.wp-block-group > * + *,
+.wp-block-post-content > * + * {
+	margin-block-start: 0;
+}
+
+/* Stopka: ciaśniejszy, równy rytm akapitów w kolumnach */
+.bc-site-footer .wp-block-column p + p {
+	margin-block-start: 0.6rem;
+}
+
+/* ---------- Animacje wejścia sekcji (klasa nadawana przez reveal.js) ---------- */
+
+.bc-reveal {
+	opacity: 0;
+	transform: translateY(26px);
+	transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.bc-reveal.bc-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.bc-reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
+/* Wielolinijkowe nagłówki łamią się w wyrównane wiersze */
+h1, h2, h3 {
+	text-wrap: balance;
+}
+
+/* ---------- Ikonki w stopce (SVG inline, kolor złota szampańskiego) ---------- */
+
+.bc-site-footer .bc-ico {
+	position: relative;
+	padding-left: 1.75rem;
+}
+
+.bc-site-footer .bc-ico::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.2em;
+	width: 1.05em;
+	height: 1.05em;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.bc-ico-pin::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23daa520' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+}
+
+.bc-ico-phone::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23daa520' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
+}
+
+.bc-ico-mail::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23daa520' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='20' height='16' rx='2'/%3E%3Cpath d='m22 7-10 5L2 7'/%3E%3C/svg%3E");
+}
+
+.bc-ico-clock::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23daa520' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E");
+}
+
+/* ---------- Linki społecznościowe w stopce (Facebook, Instagram) ---------- */
+
+.bc-site-footer .wp-block-social-links {
+	margin-top: 1.25rem;
+}
+
+/* Kolor ikon ustawia atrybut iconColor bloku (inline na <li>);
+   tutaj tylko dziedziczenie przez SVG i hover */
+.bc-site-footer .wp-social-link svg {
+	fill: currentColor;
+}
+
+/* Selektor odwzorowuje specyficzność reguły core (currentcolor na kotwicy),
+   żeby hover faktycznie wygrał kaskadę */
+.bc-site-footer .wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor:hover {
+	color: var(--wp--preset--color--base);
+}
+
+/* ---------- Zasady (O nas): rozwijane boxy z ikonkami ---------- */
+
+.bc-zasada {
+	background: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--sand);
+	border-radius: 8px;
+	padding: 0;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bc-zasada:hover {
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 8px 24px rgba(34, 31, 26, 0.06);
+}
+
+/* summary niesie cały padding boxa → klikalny jest CAŁY box, nie tylko tytuł (R6) */
+.bc-zasada summary {
+	cursor: pointer;
+	list-style: none;
+	position: relative;
+	padding: 1.4rem 4.25rem 1.4rem 4.35rem;
+	font-weight: 700;
+	font-size: 1.05rem;
+	color: var(--wp--preset--color--contrast);
+}
+
+.bc-zasada summary::-webkit-details-marker {
+	display: none;
+}
+
+/* Ikona zasady po lewej stronie tytułu */
+.bc-zasada summary::before {
+	content: "";
+	position: absolute;
+	left: 1.75rem;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1.6rem;
+	height: 1.6rem;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+/* Wskaźnik rozwijania +/− po prawej */
+.bc-zasada summary::after {
+	content: "+";
+	position: absolute;
+	right: 1.75rem;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.4rem;
+	font-weight: 300;
+	color: var(--wp--preset--color--primary);
+}
+
+.bc-zasada[open] summary::after {
+	content: "−";
+}
+
+/* Rozwinięta treść wyrównana do tytułu (za ikoną) */
+.bc-zasada > :not(summary) {
+	margin-top: 0;
+	padding: 0 1.75rem 1.4rem 4.35rem;
+}
+
+.bc-zasada--shield summary::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E");
+}
+
+.bc-zasada--plan summary::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='4' y1='21' x2='4' y2='14'/%3E%3Cline x1='4' y1='10' x2='4' y2='3'/%3E%3Cline x1='12' y1='21' x2='12' y2='12'/%3E%3Cline x1='12' y1='8' x2='12' y2='3'/%3E%3Cline x1='20' y1='21' x2='20' y2='16'/%3E%3Cline x1='20' y1='12' x2='20' y2='3'/%3E%3Cline x1='1' y1='14' x2='7' y2='14'/%3E%3Cline x1='9' y1='8' x2='15' y2='8'/%3E%3Cline x1='17' y1='16' x2='23' y2='16'/%3E%3C/svg%3E");
+}
+
+.bc-zasada--leaf summary::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z'/%3E%3Cpath d='M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12'/%3E%3C/svg%3E");
+}
+
+.bc-zasada--award summary::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='7'/%3E%3Cpolyline points='8.21 13.89 7 23 12 20 17 23 15.79 13.88'/%3E%3C/svg%3E");
+}
+
+.bc-zasada--rozwoj summary::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='23 6 13.5 15.5 8.5 10.5 1 18'/%3E%3Cpolyline points='17 6 23 6 23 12'/%3E%3C/svg%3E");
+}
+
+/* ==========================================================================
+   Efekt premium: nagłówek nad hero, kinowy hero, mikrointerakcje, detale
+   ========================================================================== */
+
+/* ---------- Nagłówek nakładkowy (strona główna) ---------- */
+
+/* Płynne przejście między stanem przezroczystym a białym */
+.bc-site-header {
+	transition: background-color 0.35s ease, background 0.35s ease,
+		box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* Na stronie głównej nagłówek leży NA zdjęciu hero: przezroczysty,
+   z delikatnym ciemnym gradientem od góry dla czytelności tekstu.
+   (Fallback bez JS przywraca biały sticky — patrz functions.php.) */
+body.home .bc-site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: transparent;
+	border-bottom-color: transparent;
+}
+
+/* Scrim jako ::before z animowaną przezroczystością — gradient nie
+   interpoluje się w transition, opacity tak */
+body.home .bc-site-header::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(15, 13, 10, 0.5), transparent);
+	opacity: 1;
+	transition: opacity 0.35s ease;
+	pointer-events: none;
+	z-index: -1;
+}
+
+body.home .bc-site-header.bc-header-solid::before {
+	opacity: 0;
+}
+
+/* Płynna zmiana koloru logo i linków przy przejściu przezroczysty↔biały */
+.bc-site-brand a,
+.bc-site-header .wp-block-navigation a {
+	transition: color 0.3s ease;
+}
+
+body.home .bc-site-header:not(.bc-header-solid) .bc-site-brand a,
+body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation,
+body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation a {
+	color: var(--wp--preset--color--base);
+}
+
+body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation a:hover,
+body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation a:focus {
+	color: var(--wp--preset--color--primary);
+}
+
+/* Rozwinięte menu mobilne ma białe tło — linki wracają do ciemnego koloru
+   (także w stanach hover/focus, bo WP ustawia fokus na pierwszym linku) */
+body.home .bc-site-header .wp-block-navigation__responsive-container.is-menu-open a {
+	color: var(--wp--preset--color--contrast);
+}
+
+body.home .bc-site-header .wp-block-navigation__responsive-container.is-menu-open a:hover,
+body.home .bc-site-header .wp-block-navigation__responsive-container.is-menu-open a:focus {
+	color: var(--wp--preset--color--primary);
+}
+
+/* Po przewinięciu (klasa z reveal.js): białe tło z rozmyciem i cieniem */
+body.home .bc-site-header.bc-header-solid {
+	background: rgba(255, 255, 255, 0.92);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border-bottom-color: var(--wp--preset--color--sand);
+	box-shadow: 0 10px 30px rgba(34, 31, 26, 0.07);
+}
+
+/* Otwarte menu mobilne to position:fixed; inset:0. Niezerowy backdrop-filter
+   na nagłówku czyni go blokiem zawierającym dla potomków fixed → overlay
+   wypełnia pasek nagłówka (~471×45) zamiast ekranu, a pozycje menu spływają
+   na ciemne hero ciemnym tekstem (niewidoczne — widać tylko „O nas"). Gdy
+   menu jest otwarte, zdejmujemy filtr (i tak zasłonięty pełnoekranowym białym
+   menu) — overlay wraca do pełnego viewportu i wszystkie pozycje są widoczne. */
+body.home .bc-site-header.bc-header-solid:has(.wp-block-navigation__responsive-container.is-menu-open) {
+	-webkit-backdrop-filter: none;
+	backdrop-filter: none;
+}
+
+/* ---------- Hero: pełny ekran, winieta, powolny zoom ---------- */
+
+/* Pełna wysokość okna (svh uwzględnia pasek adresu na mobile).
+   !important wygrywa z inline min-height:88vh z markupu bloku;
+   przeglądarki bez svh pomijają deklarację i zostają przy 88vh */
+.bc-hero {
+	min-height: 100svh !important;
+	overflow: hidden;
+}
+
+/* Gradientowa winieta zamiast płaskiego przyciemnienia: ciemniej pod
+   tekstem po lewej, zdjęcie odsłonięte po prawej */
+.bc-hero .wp-block-cover__background.has-background-dim {
+	background: linear-gradient(
+		100deg,
+		rgba(15, 13, 10, 0.78) 0%,
+		rgba(15, 13, 10, 0.55) 45%,
+		rgba(15, 13, 10, 0.18) 100%
+	) !important;
+	opacity: 1 !important;
+}
+
+/* Powolny, ledwo zauważalny zoom zdjęcia (efekt Kena Burnsa) */
+@keyframes bc-kenburns {
+	from { transform: scale(1); }
+	to { transform: scale(1.08); }
+}
+
+.bc-hero .wp-block-cover__image-background {
+	animation: bc-kenburns 22s ease-in-out infinite alternate;
+	will-change: transform;
+}
+
+/* Wejście treści hero po załadowaniu strony, ze stopniowaniem */
+@keyframes bc-hero-in {
+	from {
+		opacity: 0;
+		transform: translateY(28px);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.bc-hero .wp-block-cover__inner-container .wp-block-group > * {
+	animation: bc-hero-in 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.bc-hero .wp-block-cover__inner-container .wp-block-group > :nth-child(1) { animation-delay: 0.15s; }
+.bc-hero .wp-block-cover__inner-container .wp-block-group > :nth-child(2) { animation-delay: 0.3s; }
+.bc-hero .wp-block-cover__inner-container .wp-block-group > :nth-child(3) { animation-delay: 0.45s; }
+.bc-hero .wp-block-cover__inner-container .wp-block-group > :nth-child(4),
+.bc-hero .wp-block-cover__inner-container .wp-block-group > :nth-child(5) { animation-delay: 0.6s; }
+
+/* Wskaźnik przewijania: cienka złota linia "spływająca" w dół */
+@keyframes bc-scroll-cue {
+	0% { transform: scaleY(0); transform-origin: top; }
+	45% { transform: scaleY(1); transform-origin: top; }
+	55% { transform: scaleY(1); transform-origin: bottom; }
+	100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.bc-hero::after {
+	content: "";
+	position: absolute;
+	bottom: 1.75rem;
+	left: 50%;
+	width: 1px;
+	height: 56px;
+	background: linear-gradient(
+		180deg,
+		var(--wp--preset--color--primary),
+		rgba(197, 165, 114, 0.1)
+	);
+	animation: bc-scroll-cue 2.4s ease-in-out infinite;
+	z-index: 1;
+	pointer-events: none;
+}
+
+/* ---------- Eyebrow: czysty tekst, bez ozdobnych kresek ---------- */
+
+/* ---------- Stopniowane wejście kart wewnątrz sekcji ---------- */
+
+/* Wymaga :has(); bez wsparcia karty pojawiają się razem z sekcją */
+.bc-reveal .wp-block-column:has(> .bc-card),
+.bc-reveal .wp-block-column:has(> .bc-testimonial),
+.bc-reveal .wp-block-column:has(> .bc-offer-card),
+.bc-reveal .bc-zasada {
+	opacity: 0;
+	transform: translateY(24px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.bc-reveal.bc-visible .wp-block-column:has(> .bc-card),
+.bc-reveal.bc-visible .wp-block-column:has(> .bc-testimonial),
+.bc-reveal.bc-visible .wp-block-column:has(> .bc-offer-card),
+.bc-reveal.bc-visible .bc-zasada {
+	opacity: 1;
+	transform: none;
+}
+
+/* Opóźnienia kolejnych elementów (delay bez transition nie ma efektu,
+   więc bezpiecznie obejmuje wszystkie kolumny) */
+.bc-reveal.bc-visible .wp-block-columns > .wp-block-column:nth-child(2),
+.bc-reveal.bc-visible .bc-zasada:nth-child(2) { transition-delay: 0.12s; }
+.bc-reveal.bc-visible .wp-block-columns > .wp-block-column:nth-child(3),
+.bc-reveal.bc-visible .bc-zasada:nth-child(3) { transition-delay: 0.24s; }
+.bc-reveal.bc-visible .wp-block-columns > .wp-block-column:nth-child(4),
+.bc-reveal.bc-visible .bc-zasada:nth-child(4) { transition-delay: 0.36s; }
+.bc-reveal.bc-visible .bc-zasada:nth-child(5) { transition-delay: 0.48s; }
+
+/* ---------- Mikrointerakcje przycisków i zdjęć ---------- */
+
+.wp-block-button__link {
+	transition: background-color 0.25s ease, color 0.25s ease,
+		border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:focus-visible {
+	transform: translateY(-2px);
+	box-shadow: 0 12px 28px rgba(197, 165, 114, 0.35);
+}
+
+/* Zdjęcia w kartach: powolny zoom w masce przy najechaniu */
+.bc-card .wp-block-image {
+	overflow: hidden;
+	border-radius: 6px;
+}
+
+.bc-card .wp-block-image img {
+	transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.bc-card:hover .wp-block-image img {
+	transform: scale(1.06);
+}
+
+/* Ikonki społecznościowe w stopce: lekkie uniesienie */
+.bc-site-footer .wp-social-link {
+	transition: transform 0.2s ease;
+}
+
+.bc-site-footer .wp-social-link:hover {
+	transform: translateY(-2px);
+}
+
+/* ---------- Portrety zespołu: offsetowa złota ramka ---------- */
+
+.bc-portrait {
+	position: relative;
+	margin-bottom: 1.5rem;
+}
+
+.bc-portrait::after {
+	content: "";
+	position: absolute;
+	top: 0.875rem;
+	left: 0.875rem;
+	right: -0.875rem;
+	bottom: -0.875rem;
+	border: 1px solid var(--wp--preset--color--primary);
+	border-radius: 6px;
+	z-index: -1;
+	pointer-events: none;
+}
+
+/* ---------- Opinie: treść w foncie tekstowym (italik serif odrzucony
+   przez właściciela projektu) ---------- */
+.bc-stars + p {
+	font-size: 1rem;
+	line-height: 1.65;
+}
+
+/* ---------- Wyróżniki: złote ikony w okręgach (zamiast numerów) ---------- */
+
+.bc-card-ico {
+	width: 3.25rem;
+	height: 3.25rem;
+	border: 1px solid var(--wp--preset--color--primary);
+	border-radius: 50%;
+	position: relative;
+}
+
+.bc-card-ico::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.bc-card-ico--zespol::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E");
+}
+
+.bc-card-ico--serce::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E");
+}
+
+.bc-card-ico--kropla::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z'/%3E%3C/svg%3E");
+}
+
+.bc-card-ico--tarcza::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6f47' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E");
+}
+
+/* Karty wyróżników: kremowe tło wyróżnia je na białej sekcji;
+   treść wycentrowana (ikona, tytuł i opis w jednej osi) */
+.bc-card--soft {
+	background: var(--wp--preset--color--cream);
+	text-align: center;
+}
+
+/* ---------- Cennik: kategorie w kremowych kartach ---------- */
+
+.bc-price-card {
+	border: 1px solid var(--wp--preset--color--sand);
+	border-radius: 8px;
+}
+
+/* ---------- Nawigacja: podświetlenie czystym przejściem koloru ---------- */
+
+/* Aktywna strona oznaczona kolorem, bez podkreślenia */
+.bc-site-header .wp-block-navigation a[aria-current="page"] {
+	color: var(--wp--preset--color--primary);
+}
+
+/* ---------- Mapa dojazdu (Kontakt) ---------- */
+
+/* Skala szarości dopasowuje mapę do palety; kolor wraca po najechaniu */
+.bc-map {
+	border-radius: 8px;
+	overflow: hidden;
+	border: 1px solid var(--wp--preset--color--sand);
+	line-height: 0;
+}
+
+.bc-map iframe {
+	width: 100%;
+	height: 420px;
+	border: 0;
+	filter: grayscale(100%);
+	transition: filter 0.4s ease;
+}
+
+.bc-map:hover iframe {
+	filter: grayscale(0);
+}
+
+/* ---------- Drobiazgi ---------- */
+
+/* Zaznaczanie tekstu w kolorze marki */
+::selection {
+	background: rgba(197, 165, 114, 0.35);
+}
+
+/* ---------- Ograniczony ruch: wyłączamy wszystkie animacje hero ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+	.bc-hero .wp-block-cover__image-background,
+	.bc-hero .wp-block-cover__inner-container .wp-block-group > *,
+	.bc-hero::after {
+		animation: none;
+	}
+
+	.wp-block-button__link,
+	.bc-card .wp-block-image img,
+	.bc-site-footer .wp-social-link {
+		transition: none;
+	}
+
+	.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover {
+		transform: none;
+	}
+
+	.bc-card:hover .wp-block-image img {
+		transform: none;
+	}
+}
+
+/* ==========================================================================
+   Szlif: eleganckie linki, tytuły podstron, cennik, akordeony, widget
+   "Oddzwonimy do Ciebie" (FAB + modal)
+   ========================================================================== */
+
+/* ---------- Linki w treści: bez podkreślenia, podświetlenie przez fade ---------- */
+
+.entry-content a:where(:not(.wp-element-button)) {
+	text-decoration: none;
+	font-weight: 700;
+	transition: color 0.25s ease;
+}
+
+.entry-content a:where(:not(.wp-element-button)):hover {
+	color: var(--wp--preset--color--primary);
+}
+
+/* ---------- Przyciski: miękki prostokąt zamiast pigułki, cieplejszy hover ---------- */
+
+:root .wp-element-button,
+:root .wp-block-button__link {
+	border-radius: 10px;
+}
+
+:root :where(.wp-element-button:hover, .wp-block-button__link:hover) {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+}
+
+/* ---------- Tytuły podstron: czysty serif, bez ozdobnej kreski ---------- */
+
+.wp-block-post-title.has-text-align-center {
+	letter-spacing: 0.01em;
+}
+
+/* ---------- Cennik: minimalistyczna lista editorial ---------- */
+
+/* Nagłówek kategorii: serif + cienka linia na całą szerokość */
+.bc-pricelist h2 {
+	font-size: 1.7rem;
+	font-weight: 600;
+	padding-bottom: 0.85rem;
+	border-bottom: 1px solid var(--wp--preset--color--sand);
+	margin: 3.25rem 0 0.9rem;
+}
+
+.bc-pricelist > h2:first-child {
+	margin-top: 0;
+}
+
+.bc-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* Wiersz: nazwa po lewej, cena po prawej, dużo światła */
+.bc-menu-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 2.5rem;
+	padding: 0.8rem 0;
+	margin: 0;
+}
+
+.bc-menu-time {
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--x-small);
+	margin-left: 0.5rem;
+	white-space: nowrap;
+}
+
+.bc-menu-time::before {
+	content: "·";
+	margin-right: 0.35rem;
+}
+
+/* Tabela pakietów wewnątrz listy: odstęp jak wiersze menu */
+.bc-pricelist figure.bc-price-table {
+	margin: 0.75rem 0 0;
+}
+
+.bc-menu-price {
+	white-space: nowrap;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Notka pod listą (np. zalecana seria zabiegów) */
+.bc-pricelist-note {
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--small);
+	font-style: italic;
+	margin: 0.5rem 0 0;
+}
+
+/* Pakiety: minimalna tabela w tym samym duchu co lista.
+   Reset ramek bloku tabeli WP (pełne obramowanie komórek psuje lekki układ) */
+.bc-price-table table,
+.bc-price-table thead,
+.bc-price-table th,
+.bc-price-table td {
+	border: none;
+}
+
+.bc-price-table th:not(:first-child),
+.bc-price-table td:not(:first-child) {
+	text-align: right;
+}
+
+.bc-price-table th {
+	border-bottom: 1px solid var(--wp--preset--color--sand);
+	color: var(--wp--preset--color--muted);
+	padding: 0.85rem 0.5rem;
+}
+
+.bc-price-table td {
+	padding: 0.85rem 0.5rem;
+	border-bottom: 1px solid rgba(232, 228, 220, 0.6);
+}
+
+.bc-price-table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.bc-price-table td:first-child {
+	padding-left: 0;
+}
+
+.bc-price-table th:first-child {
+	padding-left: 0;
+}
+
+/* Wąskie ekrany: tabela przewija się poziomo zamiast miażdżyć kolumny */
+figure.bc-price-table {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.bc-price-table table {
+	min-width: 30rem;
+}
+
+/* ---------- Akordeony: płynne pojawianie się treści po rozwinięciu ---------- */
+
+@keyframes bc-acc-fade {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+}
+
+.bc-zasada[open] > :not(summary),
+.bc-offer-details[open] > :not(summary) {
+	animation: bc-acc-fade 0.35s ease 0.08s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.bc-zasada[open] > :not(summary),
+	.bc-offer-details[open] > :not(summary) {
+		animation: none;
+	}
+}
+
+/* ---------- Widget "Oddzwonimy do Ciebie": pływający przycisk ---------- */
+
+.bc-cb-fab {
+	position: fixed;
+	right: 1.5rem;
+	bottom: 1.5rem;
+	z-index: 9990;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	background: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--contrast);
+	border: none;
+	border-radius: 999px;
+	padding: 0.9rem 1.6rem;
+	font-family: var(--wp--preset--font-family--body);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	cursor: pointer;
+	box-shadow: 0 10px 30px rgba(34, 31, 26, 0.22);
+	transition: transform 0.25s ease, box-shadow 0.25s ease,
+		background-color 0.25s ease, color 0.25s ease;
+	animation: bc-fab-in 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.8s both;
+}
+
+@keyframes bc-fab-in {
+	from {
+		opacity: 0;
+		transform: translateY(14px);
+	}
+}
+
+.bc-cb-fab:hover,
+.bc-cb-fab:focus-visible {
+	background: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+	transform: translateY(-2px);
+	box-shadow: 0 14px 36px rgba(34, 31, 26, 0.3);
+}
+
+.bc-cb-fab svg {
+	width: 1.15em;
+	height: 1.15em;
+	flex: none;
+}
+
+@media (max-width: 600px) {
+	.bc-cb-fab {
+		right: 1rem;
+		bottom: 1rem;
+		padding: 0.75rem 1.25rem;
+		font-size: var(--wp--preset--font-size--x-small);
+	}
+}
+
+@media print {
+	.bc-cb-fab {
+		display: none;
+	}
+}
+
+/* ---------- Widget "Oddzwonimy do Ciebie": modal ---------- */
+
+.bc-cb-modal {
+	border: none;
+	border-radius: 14px;
+	padding: 0;
+	width: min(92vw, 30rem);
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	box-shadow: 0 30px 80px rgba(15, 13, 10, 0.35);
+}
+
+.bc-cb-modal::backdrop {
+	background: rgba(15, 13, 10, 0.55);
+}
+
+/* Animowane otwarcie (przeglądarki bez @starting-style pokazują modal od razu) */
+.bc-cb-modal[open] {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+	transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@starting-style {
+	.bc-cb-modal[open] {
+		opacity: 0;
+		transform: translateY(18px) scale(0.97);
+	}
+}
+
+.bc-cb-modal[open]::backdrop {
+	opacity: 1;
+	transition: opacity 0.3s ease;
+}
+
+@starting-style {
+	.bc-cb-modal[open]::backdrop {
+		opacity: 0;
+	}
+}
+
+/* Zamykanie sterowane klasą z JS — po przejściu modal znika */
+.bc-cb-modal.bc-cb-closing {
+	opacity: 0;
+	transform: translateY(12px) scale(0.98);
+}
+
+.bc-cb-modal.bc-cb-closing::backdrop {
+	opacity: 0;
+}
+
+body.bc-cb-lock {
+	overflow: hidden;
+}
+
+.bc-cb-inner {
+	position: relative;
+	padding: 2.25rem 2.25rem 1.75rem;
+}
+
+.bc-cb-close {
+	position: absolute;
+	top: 0.75rem;
+	right: 0.75rem;
+	width: 2.75rem;
+	height: 2.75rem;
+	display: grid;
+	place-items: center;
+	background: none;
+	border: none;
+	border-radius: 50%;
+	color: var(--wp--preset--color--muted);
+	cursor: pointer;
+	transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.bc-cb-close:hover {
+	color: var(--wp--preset--color--contrast);
+	background: var(--wp--preset--color--cream);
+}
+
+.bc-cb-close svg {
+	width: 1.1rem;
+	height: 1.1rem;
+}
+
+.bc-cb-modal h2 {
+	font-size: 1.6rem;
+	margin: 0 0 0.5rem;
+	padding-right: 2rem;
+}
+
+.bc-cb-sub {
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--small);
+	margin: 0 0 1.5rem;
+}
+
+.bc-cb-form label {
+	display: block;
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	margin-bottom: 1.1rem;
+}
+
+.bc-cb-form input,
+.bc-cb-form textarea {
+	display: block;
+	width: 100%;
+	/* width:100% liczone z paddingiem+obramowaniem — bez tego pola wychodziły
+	   ~34px poza prawy padding modala i nie były wyrównane z przyciskiem/etykietami */
+	box-sizing: border-box;
+	margin-top: 0.4rem;
+	border: 1px solid var(--wp--preset--color--sand);
+	border-radius: 8px;
+	padding: 0.8rem 1rem;
+	font-family: var(--wp--preset--font-family--body);
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: 400;
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bc-cb-form input:focus,
+.bc-cb-form textarea:focus {
+	outline: none;
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 0 0 3px rgba(197, 165, 114, 0.25);
+}
+
+.bc-cb-form input.bc-invalid,
+.bc-cb-form textarea.bc-invalid {
+	border-color: #b3543f;
+}
+
+.bc-cb-error {
+	color: #a04832;
+	font-size: var(--wp--preset--font-size--x-small);
+	margin: -0.4rem 0 0.9rem;
+}
+
+.bc-cb-submit {
+	width: 100%;
+	border: none;
+	cursor: pointer;
+}
+
+/* Sukces po wysłaniu */
+.bc-cb-success {
+	text-align: center;
+	padding: 1.5rem 0 1rem;
+}
+
+.bc-cb-success-ico {
+	width: 3.5rem;
+	height: 3.5rem;
+	margin: 0 auto 1rem;
+	border: 1px solid var(--wp--preset--color--primary);
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	color: var(--wp--preset--color--primary);
+}
+
+.bc-cb-success-ico svg {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.bc-cb-success h3 {
+	margin: 0 0 0.5rem;
+}
+
+.bc-cb-success p {
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--small);
+	margin: 0;
+}
+
+/* "Lub zadzwoń od razu" + nota prywatności */
+.bc-cb-alt {
+	text-align: center;
+	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--muted);
+	margin: 1.25rem 0 0;
+}
+
+.bc-cb-alt a {
+	color: var(--wp--preset--color--primary);
+	font-weight: 700;
+	text-decoration: none;
+	transition: color 0.25s ease;
+}
+
+.bc-cb-alt a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+.bc-cb-note {
+	text-align: center;
+	font-size: var(--wp--preset--font-size--x-small);
+	color: var(--wp--preset--color--muted);
+	margin: 0.75rem 0 0;
+}
+
+/* Placeholdery z kontrastem AA zamiast domyślnej szarości przeglądarki */
+.bc-cb-form input::placeholder,
+.bc-cb-form textarea::placeholder,
+.wpcf7 input::placeholder,
+.wpcf7 textarea::placeholder {
+	color: var(--wp--preset--color--muted);
+	opacity: 1;
+}
+
+/* Ikony społecznościowe w stopce: obszar dotyku ≥44px bez zmiany układu */
+.bc-site-footer .wp-block-social-link-anchor {
+	padding: 0.625rem;
+	margin: -0.625rem;
+}
+
+/* Pola CF7 mają width:100% bez border-box → padding+obramowanie wypychały je
+   ~14px poza viewport (pozioma przewijanka na telefonie na stronie Kontakt).
+   border-box mieści je w kolumnie formularza na każdej szerokości. */
+.wpcf7 input.wpcf7-form-control,
+.wpcf7 textarea.wpcf7-form-control {
+	box-sizing: border-box;
+}
+
+/* Formularz Kontakt: pole z brakiem + komunikat sukcesu w palecie marki */
+.wpcf7 input.bc-invalid,
+.wpcf7 textarea.bc-invalid {
+	border-color: #b3543f;
+}
+
+.wpcf7 .wpcf7-response-output {
+	border: 1px solid var(--wp--preset--color--primary);
+	border-radius: 8px;
+	background: var(--wp--preset--color--cream);
+	padding: 0.9rem 1.25rem;
+	margin: 1.25rem 0 0;
+	font-size: var(--wp--preset--font-size--small);
+}
+
+/* Komunikat z treścią nigdy nie może zostać ukryty przez stany CF7 */
+.wpcf7 form .wpcf7-response-output:not(:empty) {
+	display: block;
+}
+
+/* Wąskie ekrany: zanikająca prawa krawędź sygnalizuje, że tabelę
+   pakietów można przewinąć poziomo */
+@media (max-width: 600px) {
+	figure.bc-price-table {
+		position: relative;
+	}
+
+	figure.bc-price-table::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 2.5rem;
+		background: linear-gradient(90deg, transparent, var(--wp--preset--color--base));
+		pointer-events: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.bc-cb-fab {
+		animation: none;
+	}
+
+	.bc-cb-modal[open],
+	.bc-cb-modal[open]::backdrop {
+		transition: none;
+	}
+}
+
+/* ==========================================================================
+   Poprawki mobilne wg feedbacku z telefonu (2026-06).
+   Sekcja na końcu pliku — nadpisuje wcześniejsze reguły kolejnością źródła.
+   ========================================================================== */
+@media (max-width: 781px) {
+	/* #1 Hero: wyśrodkowane przyciski CTA (na desktopie zostają do lewej) */
+	.bc-hero .wp-block-buttons {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	/* #2 Statystyki (12+/5000+/100%): zostają w JEDNEJ linii (3 obok siebie).
+	   :has z bezpośrednim dzieckiem celuje TYLKO w wiersz statystyk, nie w
+	   nadrzędne kolumny zdjęcie|tekst (te mają się dalej stackować). */
+	.wp-block-columns:has(> .wp-block-column > .bc-card-icon.bc-stat) {
+		flex-wrap: nowrap !important;
+		gap: 0.75rem;
+	}
+	.wp-block-columns:has(> .wp-block-column > .bc-card-icon.bc-stat) > .wp-block-column {
+		flex: 1 1 0 !important;
+		flex-basis: 0 !important;
+		min-width: 0;
+	}
+	.bc-stat {
+		font-size: 1.4rem;
+	}
+
+	/* #3 Stopka: zwarta siatka 2-kolumnowa zamiast rozstrzelonej pionowej
+	   listy z dużą ilością pustej przestrzeni; marka na całą szerokość u góry */
+	.bc-site-footer .wp-block-columns {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem 1.5rem;
+	}
+	.bc-site-footer .wp-block-columns > .wp-block-column {
+		flex-basis: auto !important;
+	}
+	.bc-site-footer .wp-block-columns > .wp-block-column:first-child {
+		grid-column: 1 / -1;
+	}
+	/* 4 kolumny (marka + 3 grupy): w siatce 2-kol GODZINY OTWARCIA zostawały
+	   samotnie w ostatnim rzędzie z pustą komórką obok. Ostatnia kolumna też na
+	   całą szerokość — brak sieroty. */
+	.bc-site-footer .wp-block-columns > .wp-block-column:last-child {
+		grid-column: 1 / -1;
+	}
+
+	/* Oferta: desktopowy zigzag (zdjęcie raz z lewej, raz z prawej) po zwinięciu
+	   do jednej kolumny dawał raz zdjęcie-nad-tekstem, raz tekst-nad-zdjęciem
+	   („brak zdjęcia przed Relaks"). Na mobile zdjęcie ZAWSZE nad treścią. */
+	.wp-block-columns > .wp-block-column:has(> figure.bc-rounded:not(.bc-fill-img):not(.bc-portrait)) {
+		order: -1;
+	}
+
+	/* #7/#8/#9 Oferta: na wąskim flex-rząd powodował poziomą przewijankę.
+	   Cena (ostatni <strong>) PŁYWA w prawo — siedzi w JEDNEJ linii z opisem
+	   (górny-prawy róg), a opis zawija się obok/poniżej. flow-root domyka float,
+	   żeby nie wchodził na następny wiersz. (padding-left/nowrap z reguły bazowej.) */
+	.bc-price-row {
+		display: flow-root;
+	}
+	.bc-price-row strong:last-child {
+		float: right;
+	}
+
+	/* Odstęp między sekcjami oferty na mobile za duży (4rem ≈ 64px) — zmniejszamy
+	   do 2rem. Tylko Oferta (page-id-7); na desktopie zostaje 4rem. */
+	body.page-id-7 .wp-block-spacer[style*="height:4rem"] {
+		height: 2rem !important;
+	}
+}
+
+/* ==========================================================================
+   NEW SKIN — uwagi klienta 2026-06-16 (na czystej bazie GitHub).
+   ZŁOTO z logo (#daa520) NACZELNE, mięta (#6f9c8b) POMOCNICZA (akcent + hover).
+   Baza ma już jasny nagłówek i złote ceny — tu: paleta, logo, hover→mięta,
+   stopka NIE-czarna. Override na końcu = wygrywa kaskadę, łatwy revert.
+   ========================================================================== */
+:root {
+  --wp--preset--color--primary: #daa520;        /* złoto z logo NEW SKIN */
+  --wp--preset--color--primary-dark: #8c6d12;   /* ciemne złoto: TŁO hover przycisku + outline fokusu (już nie tekst) */
+  --wp--preset--color--secondary: #6f9c8b;      /* mięta stonowana — rola: akcent + hover */
+}
+
+/* Logo w headerze (zastępuje tekst marki) — bez sizingu renderowałoby się w pełnym rozmiarze */
+.bc-logo { height: 2.75rem; width: auto; display: block; }
+@media (max-width: 600px) { .bc-logo { height: 2.4rem; } }
+
+/* HOVER = MIĘTA. Złoto prowadzi statycznie; mięta to język interakcji (baza hover'owała w złoto). */
+.bc-site-brand a:hover,
+.bc-site-header .wp-block-navigation a:hover,
+.bc-site-header .wp-block-navigation a:focus-visible,
+body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation a:hover,
+body.home .bc-site-header:not(.bc-header-solid) .wp-block-navigation a:focus,
+.entry-content a:where(:not(.wp-element-button)):hover,
+.bc-site-footer a:hover,
+.bc-cb-alt a:hover {
+  color: var(--wp--preset--color--secondary);
+}
+
+/* Złote przyciski → podświetlenie tłem MIĘTOWYM na hover (życzenie klienta) */
+:root :where(.wp-element-button:hover, .wp-block-button__link:hover),
+.wpcf7 input[type="submit"]:hover,
+.wpcf7 input[type="submit"]:focus,
+.bc-cb-fab:hover,
+.bc-cb-fab:focus-visible {
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--contrast);
+  border-color: var(--wp--preset--color--secondary);
+}
+
+/* Przyciski konturowe: hover → mięta */
+.is-style-outline .wp-block-button__link:hover,
+.is-style-outline .wp-block-button__link:focus {
+  border-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--secondary);
+}
+
+/* Stopka JASNA/ciepła (krem — tło+tekst zmienione klasą HTML has-cream/has-contrast).
+   Marka/opis/copyright/social mają WŁASNE has-base-color (białe !important) z ciemnej stopki
+   → na kremie niewidoczne; bijemy je tą samą bronią. Nadtytuły złote, ikony ciemne. */
+.bc-site-footer { color: var(--wp--preset--color--contrast); }
+.bc-site-footer .has-base-color { color: var(--wp--preset--color--contrast) !important; }
+.bc-site-footer .bc-eyebrow { color: var(--wp--preset--color--primary); }
+.bc-site-footer .bc-ico::before { filter: none; }
+.bc-site-footer .wp-block-social-links,
+.bc-site-footer .wp-social-link .wp-block-social-link-anchor { color: var(--wp--preset--color--contrast); }
+/* Opis marki + copyright mają has-sand-color (jasny piasek, !important) → na kremie 1.19:1.
+   Na muted (#635f57 ≈ 6:1 na kremie) — czytelne, ale stonowane jak tekst drugorzędny.
+   (Linki stopki naprawione u źródła: .bc-site-footer a → --contrast.) */
+.bc-site-footer .has-sand-color { color: var(--wp--preset--color--muted) !important; }
+
+/* --- STRUKTURA (uwagi 2026-06-16): opisy Oferty, linki Produktów --- */
+/* Oferta: obszerny opis + adnotacja ceny (pełne ceny w cenniku) */
+.bc-offer-desc { line-height: 1.7; margin-bottom: 1rem; }
+.bc-offer-price-note { font-size: var(--wp--preset--font-size--small); color: var(--wp--preset--color--muted); text-align: center; } /* R9: wyśrodkuj „Zabiegi od…" */
+.bc-offer-price-note strong { color: var(--wp--preset--color--primary); }
+/* R11: cała nota „Zabiegi od…" to jeden link do cennika; kolory zachowane przez strukturę */
+.bc-offer-price-note a { color: var(--wp--preset--color--muted); text-decoration: none; transition: color 0.2s ease; }
+.bc-offer-price-note .bc-cennik-cta { color: var(--wp--preset--color--primary); }
+.bc-offer-price-note a:hover, .bc-offer-price-note a:hover strong, .bc-offer-price-note a:hover .bc-cennik-cta { color: var(--wp--preset--color--secondary); }
+/* ---------- Karty oferty (siatka 2×2 na kremowym tle) — przywrócone przy revercie sekcji ---------- */
+.bc-offer-card {
+	background: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--sand);
+	border-radius: 8px;
+	padding: 1.75rem;
+}
+/* Odstęp między dwiema kartami ułożonymi w jednej kolumnie */
+.wp-block-column > .bc-offer-card + .bc-offer-card {
+	margin-top: 1.5rem;
+}
+/* Rozwijana lista zabiegów i cen wewnątrz karty */
+.bc-offer-details {
+	border-top: 1px solid var(--wp--preset--color--sand);
+	margin-top: 1.25rem;
+	padding-top: 1rem;
+}
+.bc-offer-details summary {
+	font-weight: 700;
+	font-size: var(--wp--preset--font-size--x-small);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--primary);
+	cursor: pointer;
+	list-style: none;
+	position: relative;
+	padding-right: 2rem;
+}
+.bc-offer-details summary::-webkit-details-marker {
+	display: none;
+}
+.bc-offer-details summary::after {
+	content: "+";
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.25rem;
+	font-weight: 300;
+	color: var(--wp--preset--color--primary);
+}
+.bc-offer-details[open] summary::after {
+	content: "−";
+}
+.bc-offer-details > :not(summary) {
+	margin-top: 0.5rem;
+}
+/* Produkty: kafelki równej wysokości; cena + „Dowiedz się więcej" dociśnięte do dołu (równa linia we wszystkich). */
+.bc-product-grid .bc-card { display: flex; flex-direction: column; height: 100%; position: relative; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.bc-product-grid .bc-card-icon { margin-top: auto; }
+/* Cały kafelek klikalny → podstrona produktu (stretched-link: jeden realny <a>, dostępny klawiaturowo). */
+.bc-product-grid .bc-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(34, 31, 26, 0.10); }
+.bc-product-grid .bc-product-more a::after { content: ""; position: absolute; inset: 0; }
+@media (prefers-reduced-motion: reduce) { .bc-product-grid .bc-card:hover { transform: none; } }
+/* Logo w stopce (zamiast tekstu „NEW SKIN clinic") */
+.bc-footer-logo { height: 3rem; width: auto; display: block; }
+/* Produkty: link „Dowiedz się więcej" → kotwica w Ofercie */
+.bc-product-more { margin-top: 0.75rem; }
+.bc-product-more a { color: var(--wp--preset--color--primary); font-weight: 700; text-decoration: none; }
+
+/* Kotwice kategorii Oferty: odsłaniaj pod sticky-header (klik „Zobacz więcej") */
+h2[id], #mapa { scroll-margin-top: 6rem; } /* R4: kotwica mapy nie chowa się pod sticky-header */
