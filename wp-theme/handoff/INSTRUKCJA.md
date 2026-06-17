@@ -1,8 +1,8 @@
 # NEW SKIN clinic — instalacja na WordPressie
 
 Dwa pliki, które wgrywasz:
-- **newskin-clinic.zip** — motyw (wygląd strony). **Nie rozpakowuj** — WordPress przyjmuje motyw jako .zip.
-- **newskin-content.wxr** — treść podstron (O nas, Oferta, Cennik, Kontakt, Produkty + 3 produkty + Polityka).
+- **motyw-newskin-clinic.zip** — motyw (wygląd strony). **Nie rozpakowuj** — WordPress przyjmuje motyw jako .zip.
+- **tresc-newskin-clinic.wxr** — treść podstron (O nas, Oferta, Cennik, Kontakt, Produkty + 3 produkty + Polityka).
 
 ## Zanim zaczniesz — potrzebujesz działającego WordPressa
 
@@ -12,12 +12,12 @@ Ta paczka to **motyw + treść**, wgrywa się je do GOTOWEGO WordPressa. Panel (
 
 ## Kroki (~5 min w panelu `twojadomena.pl/wp-admin`)
 
-1. **Motyw:** Wygląd → Motywy → *Dodaj nowy* → *Wyślij motyw* → wybierz `newskin-clinic.zip` → *Zainstaluj* → **Włącz**.
+1. **Motyw:** Wygląd → Motywy → *Dodaj nowy* → *Wyślij motyw* → wybierz `motyw-newskin-clinic.zip` → *Zainstaluj* → **Włącz**.
 
 2. **Wtyczka formularza:** Wtyczki → *Dodaj nową* → wyszukaj **Contact Form 7** → *Zainstaluj* → **Włącz**.
    (Potrzebna do działania formularza na stronie Kontakt — bez niej formularz się nie wyśle.)
 
-3. **Treść:** Narzędzia → *Import* → **WordPress** → (jeśli poprosi, najpierw *Zainstaluj* importer) → *Wybierz plik* → `newskin-content.wxr` → *Wyślij plik i zaimportuj* → przy autorze zostaw/wybierz istniejącego → *Wyślij*.
+3. **Treść:** Narzędzia → *Import* → **WordPress** → (jeśli poprosi, najpierw *Zainstaluj* importer) → *Wybierz plik* → `tresc-newskin-clinic.wxr` → *Wyślij plik i zaimportuj* → przy autorze zostaw/wybierz istniejącego → *Wyślij*.
    (Zaimportuje 9 podstron jako edytowalne **Strony**.)
 
 4. **Ładne adresy:** Ustawienia → *Bezpośrednie odnośniki* → zaznacz **Nazwa wpisu** (`/%postname%/`) → *Zapisz zmiany*.
